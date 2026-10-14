@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-high":"#dde9ff","surface-container":"#e6eeff","inverse-on-surface":"#ebf1ff","on-error-container":"#93000a","tertiary-fixed-dim":"#bbc8d1","on-secondary-fixed":"#001e2c","on-primary":"#ffffff","on-tertiary-container":"#39454c","surface-container-lowest":"#ffffff","inverse-surface":"#233144","outline":"#70787f","inverse-primary":"#8dcefd","on-secondary":"#ffffff","surface-container-low":"#eff4ff","secondary-fixed-dim":"#a8cbe3","on-primary-fixed-variant":"#004c6e","surface-container-highest":"#d5e3fd","on-secondary-fixed-variant":"#274b5e","on-background":"#0d1c2f","secondary-fixed":"#c4e7ff","primary-fixed":"#c9e6ff","on-tertiary-fixed":"#111d23","error":"#ba1a1a","primary":"#14648e","on-error":"#ffffff","primary-fixed-dim":"#8dcefd","tertiary-fixed":"#d7e4ed","error-container":"#ffdad6","primary-container":"#76b7e5","surface-dim":"#ccdbf4","surface":"#f8f9ff","on-surface":"#0d1c2f","on-tertiary-fixed-variant":"#3c4850","outline-variant":"#c0c7cf","on-primary-container":"#004869","surface-tint":"#14648e","surface-bright":"#f8f9ff","tertiary":"#546068","on-secondary-container":"#44677b","secondary-container":"#c0e5fd","tertiary-container":"#a5b2ba","secondary":"#406377","on-tertiary":"#ffffff","surface-variant":"#d5e3fd","background":"#f8f9ff","on-surface-variant":"#40484e","on-primary-fixed":"#001e2f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","margin-mobile":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","space-md":"1rem",gutter:"1.5rem","gutter-mobile":"1rem","space-lg":"1.5rem",margin:"2rem"},fontFamily:{"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"]},fontSize:{"headline-lg-mobile":["22px",{lineHeight:"30px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"title-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl-mobile":["28px",{lineHeight:"36px",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"16px",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",fontWeight:"600"}],"headline-xl":["36px",{lineHeight:"44px",fontWeight:"700"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",fontWeight:"600"}]}}}}</script></head><body class="bg-surface text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><img alt="Takumi Festival Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYtp_Zjeo26PDjEeLCv52JlWqEAJj3dOoW6H_ystgt0TrQL5z_YA9YcOKOp54HAPm6j9xGdtOxwE5Ac5YGLKEuBpwaokJDtjIrDmJPW8_l4KPrfmnQZNowm5vgqe4omjmpJPP26y3Mgv_g6j1ynrLlVCtfjy_hBe3T-SmMyKXuqG9Qv_MSYVbrei93ndtHGcCE2DImxIygX0N9ZrtNcaILdg-6XVwCOQ4wXECNVRYNm7Jno0FS7hkurUc"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">Takumi Festival</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Sistem Manajemen Acara</span></div></div><div class="px-space-md py-space-sm"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-primary"><span class="material-symbols-outlined text-body-md">calendar_today</span><span class="font-label-sm text-label-sm truncate">18 - 20 Oktober 2025</span></div></div><nav class="flex-1 px-space-sm py-space-xs space-y-1 overflow-y-auto" data-active-classes="bg-surface-container-high text-primary font-title-sm rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-body-lg">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="panitia" href="#"><span class="material-symbols-outlined text-body-lg">group</span><span class="font-body-md text-body-md">Panitia</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="divisi" href="#"><span class="material-symbols-outlined text-body-lg">domain</span><span class="font-body-md text-body-md">Divisi</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="jabatan" href="#"><span class="material-symbols-outlined text-body-lg">badge</span><span class="font-body-md text-body-md">Jabatan</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="rundown" href="#"><span class="material-symbols-outlined text-body-lg">schedule</span><span class="font-body-md text-body-md">Rundown</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="tugas" href="#"><span class="material-symbols-outlined text-body-lg">checklist</span><span class="font-body-md text-body-md">Tugas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="perlengkapan" href="#"><span class="material-symbols-outlined text-body-lg">inventory_2</span><span class="font-body-md text-body-md">Perlengkapan</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="tenant" href="#"><span class="material-symbols-outlined text-body-lg">storefront</span><span class="font-body-md text-body-md">Tenant</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="lomba" href="#"><span class="material-symbols-outlined text-body-lg">emoji_events</span><span class="font-body-md text-body-md">Lomba</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-colors bg-surface-container-high text-primary font-title-sm rounded-lg" data-path="sponsor" href="#"><span class="material-symbols-outlined text-body-lg">handshake</span><span class="font-body-md text-body-md">Sponsor</span></a></nav><div class="p-space-sm bg-surface-container-low m-space-sm rounded-lg flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Sistem Aktif</span></div><span class="font-label-sm text-label-sm text-primary font-bold">v2.4</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-sm"><nav class="flex items-center text-on-surface-variant font-label-md text-label-md"><span class="hover:text-primary transition-colors cursor-pointer">Festival</span><span class="material-symbols-outlined text-body-sm mx-space-xs text-outline">chevron_right</span><span class="text-primary font-title-sm text-title-sm">Operasional Acara</span></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-lowest text-on-surface-variant shadow-[0_1px_3px_rgba(51,65,85,0.04)]"><span class="material-symbols-outlined text-body-md">search</span><span class="font-body-sm text-body-sm text-on-surface-variant pr-space-md">Cari data, rundown...</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">⌘K</kbd></div><button aria-label="Pemberitahuan" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-body-lg">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-title-sm text-title-sm text-on-surface leading-tight">Amalia Putri</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Koordinator Utama</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_3px_rgba(51,65,85,0.1)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA62YBSRcYd_P5JDF2HkDj_P7AoZQD5nsbHDhFcjTQKX-dSgzOwKx5dsBTZgwUPEiaDwBfYqhftwkCw-ETdU2XSx87km52gBo2yVp6yfCGM4gBVqP22V-a7jqNbzRJZnfftZoJGnCCHl6JLgEAkbrZqVHDbTPrcMXWmNmoywpo18VVPr4LFvZOCV0OZPGjgvH86aKF7f0ZuXwzIi91SHUGBLnQJC81Ky2X6vTmchim5K50uUrcjA4hB"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-gutter pb-space-xl"><div class="flex flex-col w-full space-y-space-lg">
+<!-- PAGE HEADER & ACTION CONTROLS -->
+<section class="flex flex-col gap-space-md lg:flex-row lg:items-end lg:justify-between">
+<div class="flex flex-col space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-body-md">handshake</span>
+<span>DIVISI SPONSORSHIP &amp; MITRA KERJA</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Data Sponsor</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Kelola kemitraan sponsor, realisasi pendanaan, dan pemenuhan benefit festival secara terstruktur demi kelancaran Takumi Festival.
+      </p>
+</div>
+<!-- Top Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs lg:pt-0">
+<button class="inline-flex items-center gap-space-xs px-4 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all shadow-sm font-label-md text-label-md active:scale-95" id="btn-export-rekap" type="button">
+<span class="material-symbols-outlined text-body-md text-primary">download</span>
+<span>Ekspor Rekap Sponsorship</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-4 py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary/90 transition-all shadow-sm font-label-md text-label-md active:scale-95" id="btn-open-add-modal" type="button">
+<span class="material-symbols-outlined text-body-md">add_circle</span>
+<span>+ Tambah Sponsor</span>
+</button>
+</div>
+</section>
+<!-- COMPACT SPONSOR OVERVIEW / METRIC CARDS -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Sponsor</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-md">storefront</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">12</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Mitra Terdaftar</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-body-sm">check_circle</span>
+<span>100% Kontrak Disepakati</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Realisasi Dana</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-md">payments</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">Rp 85.000.000</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-body-sm">trending_up</span>
+<span>Mencapai 106% dari target awal</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Tier Teratas</span>
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-headline-md">workspace_premium</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">2 Platinum</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Partner</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-body-sm">star</span>
+<span>Indofood &amp; Wacom ID</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Pemenuhan Benefit</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-md">task_alt</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">92%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">23/25 Item Aktif</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full transition-all duration-700" style="width: 92%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SEARCH, TIER FILTER & CONTROLS -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-body-lg text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all" id="table-search" placeholder="Cari nama sponsor, PIC sponsor, atau benefit..." type="text"/>
+</div>
+<!-- Tier Filters Tabs/Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0 scrollbar-none" id="tier-filter-pills">
+<button class="filter-pill active px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary text-on-primary transition-colors cursor-pointer shadow-sm" data-tier="ALL">
+          Semua Kategori (8)
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-tier="Platinum Sponsor">
+          Platinum Sponsor
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-tier="Gold Sponsor">
+          Gold Sponsor
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-tier="Silver Sponsor">
+          Silver Sponsor
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-tier="Partner">
+          Beverage, Payment &amp; Media
+        </button>
+</div>
+</div>
+</section>
+<!-- DATA TABLE SPONSOR -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="table-sponsors">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<th class="py-3 px-space-md text-center w-12">No.</th>
+<th class="py-3 px-space-sm whitespace-nowrap w-24">ID</th>
+<th class="py-3 px-space-md whitespace-nowrap min-w-[220px]">Nama Sponsor</th>
+<th class="py-3 px-space-md whitespace-nowrap">Tier Kemitraan</th>
+<th class="py-3 px-space-md whitespace-nowrap min-w-[220px]">PIC Sponsor</th>
+<th class="py-3 px-space-md min-w-[280px]">Benefit Sponsor</th>
+<th class="py-3 px-space-md whitespace-nowrap">Penanggung Jawab</th>
+<th class="py-3 px-space-md whitespace-nowrap text-center">Status</th>
+<th class="py-3 px-space-md whitespace-nowrap text-center w-28">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md" id="sponsor-tbody">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-01" data-tier="Platinum Sponsor">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">1</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-01</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold text-label-sm">
+                  IF
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">PT Indofood CBP Sukses Makmur</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">F&amp;B Brand Pavilion</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Platinum Sponsor
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Bapak Anton Wijaya</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0811-2233-4455
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Main Backdrop</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Booth 6x6m</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Adlips 15x</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Video LED Stage</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">FN</span>
+<span class="font-body-md text-body-md">Farah Nabila</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-01" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-01" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-01" data-name="PT Indofood CBP Sukses Makmur" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-02" data-tier="Platinum Sponsor">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">2</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-02</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold text-label-sm">
+                  WC
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">Wacom Indonesia &amp; Creative Hub</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Digital Tablet &amp; Hardware</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Platinum Sponsor
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Ibu Dian Lestari</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0812-3344-5566
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Workshop Interaktif</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Hadiah Fanart Tablet</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Logo Banner Gate</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">FN</span>
+<span class="font-body-md text-body-md">Farah Nabila</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-02" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-02" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-02" data-name="Wacom Indonesia &amp; Creative Hub" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-03" data-tier="Partner">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">3</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-03</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-label-sm">
+                  PS
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">Pocari Sweat (PT Amerta Indah Otsuka)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Minuman Isotonik</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Official Beverage Partner
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Bapak Budi Hartono</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0813-4455-6677
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Eksklusivitas Isotonik</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Sampling Entrance</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Umbul-Umbul Gate</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">FN</span>
+<span class="font-body-md text-body-md">Farah Nabila</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-03" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-03" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-03" data-name="Pocari Sweat (PT Amerta Indah Otsuka)" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-04" data-tier="Gold Sponsor">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">4</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-04</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold text-label-sm">
+                  SK
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">Japanese Language School Sakura</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lembaga Bahasa &amp; Edukasi</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Gold Sponsor
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Sensei Kenjiro Tanaka</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0815-5566-7788
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Stand Beasiswa Jepang</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Sosmed &amp; Poster</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Sambutan 10 Mnt</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">FN</span>
+<span class="font-body-md text-body-md">Farah Nabila</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-04" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-04" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-04" data-name="Japanese Language School Sakura" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-05" data-tier="Silver Sponsor">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">5</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-05</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-label-sm">
+                  C21
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">Cinema 21 / Anime Movie Screening</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Entertainment &amp; Cinema</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Silver Sponsor
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Jessica Pamela</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0817-6677-8899
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Voucher Nonton</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Trailer Anime di Layar</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Logo Flyer</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-[10px] font-bold">GS</span>
+<span class="font-body-md text-body-md">Gita Savitri</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-05" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-05" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-05" data-name="Cinema 21 / Anime Movie Screening" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-06" data-tier="Partner">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">6</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-06</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold text-label-sm">
+                  BLU
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">Bank BCA Digital (blu)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fintech &amp; Digital Banking</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Official Payment Partner
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Rizky Maulana</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0818-7788-9900
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Promo QRIS Tenant</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Booth Kasir</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Logo Website</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">FN</span>
+<span class="font-body-md text-body-md">Farah Nabila</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-06" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-06" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-06" data-name="Bank BCA Digital (blu)" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-07" data-tier="Partner">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">7</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-07</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold text-label-sm">
+                  KN
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">Kaori Nusantara &amp; Japanese Music ID</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Media Portal Pop-Culture</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Official Media Partner
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Kevin Pratama</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0819-8899-0011
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Publikasi Artikel</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Liputan Foto &amp; Video</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Live Report Hari H</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-primary flex items-center justify-center text-[10px] font-bold">JT</span>
+<span class="font-body-md text-body-md">Jessica Tan (Humas)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-07" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-07" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-07" data-name="Kaori Nusantara &amp; Japanese Music ID" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors sponsor-row" data-id="SPN-08" data-tier="Silver Sponsor">
+<td class="py-3.5 px-space-md text-center font-label-sm text-outline">8</td>
+<td class="py-3.5 px-space-sm font-label-md text-primary font-bold">SPN-08</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold text-label-sm">
+                  TG
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-semibold truncate">Tokyo Gaming Gear &amp; Peripheral</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Esports &amp; Merchandise</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Silver Sponsor
+              </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Hendra Susanto</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone</span>0821-9900-1122
+                </span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-wrap gap-1 max-w-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Hadiah Lomba Games</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Banner Gaming Alley</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[10px] font-bold">FN</span>
+<span class="font-body-md text-body-md">Farah Nabila</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                Kontrak Selesai
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="btn-detail p-1.5 rounded hover:bg-surface-container text-primary" data-id="SPN-08" title="Detail Benefit" type="button">
+<span class="material-symbols-outlined text-body-lg">visibility</span>
+</button>
+<button class="btn-edit p-1.5 rounded hover:bg-surface-container text-secondary" data-id="SPN-08" title="Edit Data" type="button">
+<span class="material-symbols-outlined text-body-lg">edit</span>
+</button>
+<button class="btn-delete p-1.5 rounded hover:bg-error-container text-error" data-id="SPN-08" data-name="Tokyo Gaming Gear &amp; Peripheral" title="Hapus" type="button">
+<span class="material-symbols-outlined text-body-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- PAGINATION -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="table-info">
+        Menampilkan 1 - 8 dari 8 mitra sponsor
+      </span>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-outline hover:text-on-surface hover:bg-surface-container disabled:opacity-50 text-body-sm font-label-md" disabled="" type="button">
+<span class="material-symbols-outlined text-body-md">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center" type="button">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center justify-center" type="button">2</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-outline hover:text-on-surface hover:bg-surface-container text-body-sm font-label-md" type="button">
+<span class="material-symbols-outlined text-body-md">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- MODAL: TAMBAH / EDIT SPONSOR -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200" id="modal-sponsor">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-xl shadow-xl overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-headline-md">storefront</span>
+<h3 class="font-headline-md text-headline-md text-on-surface" id="modal-title">Tambah Mitra Sponsor Baru</h3>
+</div>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors" id="btn-close-modal" type="button">
+<span class="material-symbols-outlined text-body-lg">close</span>
+</button>
+</div>
+<!-- Modal Body (Form) -->
+<form class="p-space-lg overflow-y-auto space-y-space-md" id="form-sponsor">
+<input id="input-sponsor-id" type="hidden" value=""/>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Nama Perusahaan / Sponsor -->
+<div class="flex flex-col space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="input-nama-sponsor">
+              Nama Perusahaan / Sponsor <span class="text-error">*</span>
+</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none" id="input-nama-sponsor" placeholder="Contoh: PT Indofood CBP Sukses Makmur" required="" type="text"/>
+</div>
+<!-- Tier Kemitraan -->
+<div class="flex flex-col space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="select-tier">
+              Tier Kemitraan <span class="text-error">*</span>
+</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:outline-none" id="select-tier" required="">
+<option value="Platinum Sponsor">Platinum Sponsor</option>
+<option value="Gold Sponsor">Gold Sponsor</option>
+<option value="Silver Sponsor">Silver Sponsor</option>
+<option value="Official Beverage Partner">Official Beverage Partner</option>
+<option value="Official Payment Partner">Official Payment Partner</option>
+<option value="Official Media Partner">Official Media Partner</option>
+</select>
+</div>
+<!-- Nilai Pendanaan / Kontribusi -->
+<div class="flex flex-col space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="input-nilai">
+              Nilai Pendanaan / Kontribusi (Rp) <span class="text-error">*</span>
+</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface placeholder:text-outline font-body-md text-body-md focus:ring-2 focus:ring-primary focus:outline-none" id="input-nilai" placeholder="Contoh: 25.000.000" required="" type="text"/>
+</div>
+<!-- PIC Sponsor (Nama & Jabatan) -->
+<div class="flex flex-col space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="input-pic-nama">
+              Nama &amp; Jabatan PIC Sponsor <span class="text-error">*</span>
+</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface placeholder:text-outline font-body-md text-body-md focus:ring-2 focus:ring-primary focus:outline-none" id="input-pic-nama" placeholder="Contoh: Bapak Anton Wijaya (Brand Lead)" required="" type="text"/>
+</div>
+<!-- PIC Sponsor (Kontak Telepon / WhatsApp) -->
+<div class="flex flex-col space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="input-pic-kontak">
+              Nomor WhatsApp / Telepon <span class="text-error">*</span>
+</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface placeholder:text-outline font-body-md text-body-md focus:ring-2 focus:ring-primary focus:outline-none" id="input-pic-kontak" placeholder="Contoh: 0811-2233-4455" required="" type="tel"/>
+</div>
+<!-- Panitia Penanggung Jawab (ERD: id_panitia) -->
+<div class="flex flex-col space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="select-panitia">
+              Panitia Penanggung Jawab (Divisi Sponsorship) <span class="text-error">*</span>
+</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:outline-none" id="select-panitia" required="">
+<option value="Farah Nabila">Farah Nabila (Koordinator Sponsorship)</option>
+<option value="Gita Savitri">Gita Savitri (Staff Sponsorship)</option>
+<option value="Jessica Tan (Humas)">Jessica Tan (Staff Sponsorship &amp; Humas)</option>
+<option value="Amalia Putri">Amalia Putri (Koordinator Utama)</option>
+</select>
+</div>
+<!-- Rincian Benefit Sponsor -->
+<div class="flex flex-col space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="textarea-benefit">
+              Rincian Benefit Sponsor <span class="text-error">*</span>
+</label>
+<textarea class="w-full p-3.5 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface placeholder:text-outline font-body-md text-body-md focus:ring-2 focus:ring-primary focus:outline-none resize-none" id="textarea-benefit" placeholder="Contoh: Logo Main Backdrop, Booth Utama 6x6m, Adlips MC 15x, Penayangan Video LED Panggung" required="" rows="3"></textarea>
+<span class="font-label-sm text-label-sm text-outline">Gunakan koma untuk memisahkan setiap komitmen benefit visual, booth, dan publikasi.</span>
+</div>
+</div>
+<!-- Modal Footer Actions -->
+<div class="pt-space-md flex items-center justify-end gap-space-sm">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" id="btn-cancel-modal" type="button">
+            Batal
+          </button>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90 transition-all shadow-sm active:scale-95" type="submit">
+            Simpan Sponsor
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL: DETAIL BENEFIT DIALOG -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200" id="modal-detail">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-xl overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-headline-md">receipt_long</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Detail Komitmen Benefit</h3>
+</div>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors" id="btn-close-detail" type="button">
+<span class="material-symbols-outlined text-body-lg">close</span>
+</button>
+</div>
+<div class="p-space-lg space-y-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Nama Sponsor</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold mt-0.5" id="detail-nama">PT Indofood CBP Sukses Makmur</h4>
+<span class="inline-block px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm mt-1" id="detail-tier">Platinum Sponsor</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Daftar Benefit Tertera dalam Kontrak:</span>
+<ul class="space-y-1.5 font-body-md text-body-md text-on-surface-variant pl-4 list-disc" id="detail-benefit-list">
+<!-- Dynamic Benefit list -->
+</ul>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md pt-space-xs">
+<span class="text-outline">Penanggung Jawab:</span>
+<span class="text-on-surface font-semibold" id="detail-pic">Farah Nabila</span>
+</div>
+</div>
+<div class="px-space-lg py-space-md bg-surface-container-low flex justify-end">
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90" id="btn-close-detail-footer" type="button">
+          Tutup
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL: KONFIRMASI HAPUS DATA -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200" id="modal-delete">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-xl shadow-xl overflow-hidden p-space-lg space-y-space-md animate-in fade-in zoom-in-95 duration-200">
+<div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-headline-md">warning</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Hapus Mitra Sponsor?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-normal">
+          Apakah Anda yakin ingin menghapus data kemitraan <span class="font-semibold text-on-surface" id="delete-sponsor-name"></span>? Tindakan ini akan membatalkan alokasi benefit festival.
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-sm">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" id="btn-cancel-delete" type="button">
+          Batal
+        </button>
+<button class="px-4 py-2 rounded-lg bg-error text-on-error hover:bg-error/90 font-label-md text-label-md transition-colors shadow-sm" id="btn-confirm-delete" type="button">
+          Ya, Hapus Data
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- SCRIPT: INTERACTION & LOGIC -->
+<script>
+  (() => {
+    // DOM Elements
+    const btnOpenAddModal = document.getElementById('btn-open-add-modal');
+    const modalSponsor = document.getElementById('modal-sponsor');
+    const btnCloseModal = document.getElementById('btn-close-modal');
+    const btnCancelModal = document.getElementById('btn-cancel-modal');
+    const formSponsor = document.getElementById('form-sponsor');
+    const modalTitle = document.getElementById('modal-title');
+    
+    // Form Inputs
+    const inputId = document.getElementById('input-sponsor-id');
+    const inputNama = document.getElementById('input-nama-sponsor');
+    const selectTier = document.getElementById('select-tier');
+    const inputNilai = document.getElementById('input-nilai');
+    const inputPicNama = document.getElementById('input-pic-nama');
+    const inputPicKontak = document.getElementById('input-pic-kontak');
+    const selectPanitia = document.getElementById('select-panitia');
+    const textareaBenefit = document.getElementById('textarea-benefit');
+
+    // Delete Modal Elements
+    const modalDelete = document.getElementById('modal-delete');
+    const btnCancelDelete = document.getElementById('btn-cancel-delete');
+    const btnConfirmDelete = document.getElementById('btn-confirm-delete');
+    const deleteSponsorNameSpan = document.getElementById('delete-sponsor-name');
+    let targetDeleteId = null;
+
+    // Detail Modal Elements
+    const modalDetail = document.getElementById('modal-detail');
+    const btnCloseDetail = document.getElementById('btn-close-detail');
+    const btnCloseDetailFooter = document.getElementById('btn-close-detail-footer');
+    const detailNama = document.getElementById('detail-nama');
+    const detailTier = document.getElementById('detail-tier');
+    const detailBenefitList = document.getElementById('detail-benefit-list');
+    const detailPic = document.getElementById('detail-pic');
+
+    // Toast Container (defined in shell as #toast-container)
+    const toastContainer = document.getElementById('toast-container');
+
+    // Show Toast Notification
+    const showToast = (message, type = 'success') => {
+      if (!toastContainer) return;
+      const toast = document.createElement('div');
+      toast.className = `flex items-center gap-2 px-4 py-3 rounded-lg shadow-lg text-body-md font-body-md pointer-events-auto transform transition-all duration-300 translate-y-2 opacity-0 ${
+        type === 'success' ? 'bg-inverse-surface text-inverse-on-surface' : 'bg-error text-on-error'
+      }`;
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-body-lg text-primary-container">${type === 'success' ? 'check_circle' : 'error'}</span>
+        <span>${message}</span>
+      `;
+      toastContainer.appendChild(toast);
+      
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    };
+
+    // Modal Visibility Helpers
+    const openModal = (modal) => {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10);
+    };
+
+    const closeModal = (modal) => {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
+    };
+
+    // Open Add Modal
+    btnOpenAddModal.addEventListener('click', () => {
+      modalTitle.textContent = 'Tambah Mitra Sponsor Baru';
+      formSponsor.reset();
+      inputId.value = '';
+      openModal(modalSponsor);
+    });
+
+    // Close Add/Edit Modal
+    btnCloseModal.addEventListener('click', () => closeModal(modalSponsor));
+    btnCancelModal.addEventListener('click', () => closeModal(modalSponsor));
+
+    // Handle Form Submit (Add or Edit)
+    formSponsor.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const isEdit = Boolean(inputId.value);
+      closeModal(modalSponsor);
+      showToast(isEdit ? 'Data sponsor berhasil diperbarui!' : 'Sponsor baru berhasil ditambahkan!');
+    });
+
+    // Detail Modal Handlers
+    document.querySelectorAll('.btn-detail').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const row = btn.closest('tr');
+        const name = row.querySelector('.font-title-sm').textContent.trim();
+        const tier = row.dataset.tier;
+        const pic = row.querySelector('td:nth-child(7) span.font-body-md').textContent.trim();
+        const badges = row.querySelectorAll('td:nth-child(6) span');
+
+        detailNama.textContent = name;
+        detailTier.textContent = tier;
+        detailPic.textContent = pic;
+        detailBenefitList.innerHTML = '';
+
+        badges.forEach(b => {
+          const li = document.createElement('li');
+          li.textContent = b.textContent;
+          detailBenefitList.appendChild(li);
+        });
+
+        openModal(modalDetail);
+      });
+    });
+
+    btnCloseDetail.addEventListener('click', () => closeModal(modalDetail));
+    btnCloseDetailFooter.addEventListener('click', () => closeModal(modalDetail));
+
+    // Edit Button Handlers
+    document.querySelectorAll('.btn-edit').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const row = btn.closest('tr');
+        const id = row.dataset.id;
+        const name = row.querySelector('.font-title-sm').textContent.trim();
+        const picFull = row.querySelector('td:nth-child(5) .font-semibold').textContent.trim();
+        const picContact = row.querySelector('td:nth-child(5) .font-body-sm').textContent.replace(/phone/g, '').trim();
+
+        modalTitle.textContent = `Edit Data Sponsor (${id})`;
+        inputId.value = id;
+        inputNama.value = name;
+        inputPicNama.value = picFull;
+        inputPicKontak.value = picContact;
+        inputNilai.value = '25.000.000';
+        textareaBenefit.value = Array.from(row.querySelectorAll('td:nth-child(6) span')).map(s => s.textContent).join(', ');
+
+        openModal(modalSponsor);
+      });
+    });
+
+    // Delete Modal Handlers
+    document.querySelectorAll('.btn-delete').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        targetDeleteId = btn.dataset.id;
+        deleteSponsorNameSpan.textContent = btn.dataset.name || targetDeleteId;
+        openModal(modalDelete);
+      });
+    });
+
+    btnCancelDelete.addEventListener('click', () => {
+      closeModal(modalDelete);
+      targetDeleteId = null;
+    });
+
+    btnConfirmDelete.addEventListener('click', () => {
+      if (targetDeleteId) {
+        const row = document.querySelector(`tr[data-id="${targetDeleteId}"]`);
+        if (row) row.remove();
+        closeModal(modalDelete);
+        showToast('Data mitra sponsor telah dihapus dari sistem.', 'error');
+        targetDeleteId = null;
+      }
+    });
+
+    // Export Rekap Sponsorship Button
+    document.getElementById('btn-export-rekap').addEventListener('click', () => {
+      showToast('Sedang menyiapkan file rekap sponsorship (XLSX)...');
+      setTimeout(() => {
+        showToast('Rekapitulasi sponsorship berhasil diunduh!');
+      }, 1200);
+    });
+
+    // Filter by Tier
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const tableRows = document.querySelectorAll('.sponsor-row');
+    const searchInput = document.getElementById('table-search');
+
+    const filterTable = () => {
+      const activePill = document.querySelector('.filter-pill.active');
+      const tierFilter = activePill ? activePill.dataset.tier : 'ALL';
+      const searchVal = searchInput.value.toLowerCase().trim();
+
+      let visibleCount = 0;
+
+      tableRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        const rowTier = row.dataset.tier;
+
+        const matchesTier = (tierFilter === 'ALL') || 
+                            (tierFilter === 'Partner' && (rowTier.includes('Partner') || rowTier === 'Partner')) ||
+                            (rowTier === tierFilter);
+
+        const matchesSearch = rowText.includes(searchVal);
+
+        if (matchesTier && matchesSearch) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      const infoText = document.getElementById('table-info');
+      if (infoText) {
+        infoText.textContent = `Menampilkan ${visibleCount} dari ${tableRows.length} mitra sponsor`;
+      }
+    };
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('active', 'bg-primary', 'text-on-primary', 'shadow-sm');
+          p.classList.add('bg-surface-container-low', 'text-on-surface');
+        });
+        pill.classList.add('active', 'bg-primary', 'text-on-primary', 'shadow-sm');
+        pill.classList.remove('bg-surface-container-low', 'text-on-surface');
+        filterTable();
+      });
+    });
+
+    searchInput.addEventListener('input', filterTable);
+
+  })();
+</script></main></div><div class="relative z-50" id="modal-root"></div><div class="fixed bottom-space-lg right-space-lg z-50 flex flex-col gap-space-sm pointer-events-none" id="toast-container"></div></body></html>
