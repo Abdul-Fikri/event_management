@@ -31,27 +31,27 @@
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Ringkasan Kapasitas</span>
 <div class="flex items-baseline gap-2 mt-2">
-<span class="font-headline-xl text-headline-xl text-on-surface font-bold">25<span class="text-headline-md font-normal text-on-surface-variant">/25</span></span>
-<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 100% Penuh
+<span id="capacityRatio" data-occupied="25" data-max="25" class="font-headline-xl text-headline-xl text-on-surface font-bold"><span id="capacityOccupied">25</span><span class="text-headline-md font-normal text-on-surface-variant">/<span id="capacityMax">25</span></span></span>
+<span id="capacityBadge" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary" id="capacityBadgeDot"></span> <span id="capacityBadgeText">100% Penuh</span>
             </span>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Seluruh 25 unit stan bazar telah terverifikasi &amp; teralokasi.</p>
+<p id="capacityDescription" class="font-body-sm text-body-sm text-on-surface-variant mt-1">Seluruh 25 unit stan bazar telah terverifikasi &amp; teralokasi.</p>
 </div>
 <div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
 <span class="material-symbols-outlined text-body-lg">storefront</span>
 </div>
 </div>
 <div class="mt-space-md pt-space-sm">
-<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex">
-<div class="bg-primary h-full w-[32%]" title="Zona A: 8 Booth"></div>
-<div class="bg-primary-container h-full w-[40%]" title="Zona B: 10 Booth"></div>
-<div class="bg-secondary h-full w-[28%]" title="Zona C: 7 Booth"></div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex" id="capacityProgressBar">
+<div id="zoneABar" class="bg-primary h-full transition-all duration-300 w-[32%]" title="Zona A: 8 Booth"></div>
+<div id="zoneBBar" class="bg-primary-container h-full transition-all duration-300 w-[40%]" title="Zona B: 10 Booth"></div>
+<div id="zoneCBar" class="bg-secondary h-full transition-all duration-300 w-[28%]" title="Zona C: 7 Booth"></div>
 </div>
 <div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm mt-2">
-<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Zona A (8)</span>
-<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Zona B (10)</span>
-<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Zona C (7)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Zona A (<span id="zoneACount">8</span>)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Zona B (<span id="zoneBCount">10</span>)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Zona C (<span id="zoneCCount">7</span>)</span>
 </div>
 </div>
 </div>

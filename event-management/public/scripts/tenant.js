@@ -1,4 +1,4 @@
-﻿/**
+/**
  * tenant.js - CRUD & Pagination Logic untuk halaman Manajemen Tenant
  * Semua data disimpan in-memory (frontend only, tidak ada backend).
  */
@@ -34,6 +34,7 @@ let tenants = [
 
 // ─── 2. STATE ───────────────────────────────────────────────────────────────
 const ITEMS_PER_PAGE = 10;
+const MAX_CAPACITY = 25;
 let currentPage = 1;
 let filteredTenants = [...tenants];
 
@@ -61,7 +62,71 @@ function generateNextId() {
   return 'TNT-' + String(max + 1).padStart(2, '0');
 }
 
-// ─── 4. RENDER TABEL ────────────────────────────────────────────────────────
+// ─── 4. RINGKASAN KAPASITAS ────────────────────────────────────────────────
+function updateCapacitySummary() {
+  const occupied = Math.min(MAX_CAPACITY, Math.max(0, tenants.length));
+  const remaining = Math.max(0, MAX_CAPACITY - occupied);
+  const percentage = Math.round((occupied / MAX_CAPACITY) * 100);
+
+  // 1. Nilai Terisi & Maksimum
+  const occupiedEl = document.getElementById('capacityOccupied');
+  if (occupiedEl) {
+    occupiedEl.textContent = String(occupied);
+  }
+
+  const maxEl = document.getElementById('capacityMax');
+  if (maxEl) {
+    maxEl.textContent = String(MAX_CAPACITY);
+  }
+
+  const ratioEl = document.getElementById('capacityRatio');
+  if (ratioEl) {
+    ratioEl.dataset.occupied = String(occupied);
+    ratioEl.dataset.max = String(MAX_CAPACITY);
+    ratioEl.setAttribute('aria-label', `${occupied} dari ${MAX_CAPACITY}`);
+  }
+
+  // 2. Status Badge & Persentase
+  const badgeTextEl = document.getElementById('capacityBadgeText');
+  if (badgeTextEl) {
+    badgeTextEl.textContent = occupied >= MAX_CAPACITY ? '100% Penuh' : `${percentage}% Terisi`;
+  }
+
+  // 3. Deskripsi Kapasitas
+  const descEl = document.getElementById('capacityDescription');
+  if (descEl) {
+    if (occupied >= MAX_CAPACITY) {
+      descEl.textContent = `Seluruh ${MAX_CAPACITY} unit stan bazar telah terverifikasi & teralokasi.`;
+    } else {
+      descEl.textContent = `${occupied} dari ${MAX_CAPACITY} unit stan bazar telah teralokasi (${remaining} stan tersisa).`;
+    }
+  }
+
+  // 4. Progress Bar & Unit per Zona
+  const zoneACount = tenants.filter(t => t.zone && t.zone.startsWith('Zona A')).length;
+  const zoneBCount = tenants.filter(t => t.zone && t.zone.startsWith('Zona B')).length;
+  const zoneCCount = tenants.filter(t => t.zone && t.zone.startsWith('Zona C')).length;
+
+  const barA = document.getElementById('zoneABar');
+  const barB = document.getElementById('zoneBBar');
+  const barC = document.getElementById('zoneCBar');
+  if (barA) barA.style.width = `${(zoneACount / MAX_CAPACITY) * 100}%`;
+  if (barB) barB.style.width = `${(zoneBCount / MAX_CAPACITY) * 100}%`;
+  if (barC) barC.style.width = `${(zoneCCount / MAX_CAPACITY) * 100}%`;
+
+  const countA = document.getElementById('zoneACount');
+  const countB = document.getElementById('zoneBCount');
+  const countC = document.getElementById('zoneCCount');
+  if (countA) countA.textContent = String(zoneACount);
+  if (countB) countB.textContent = String(zoneBCount);
+  if (countC) countC.textContent = String(zoneCCount);
+}
+
+window.updateCapacitySummary = updateCapacitySummary;
+window.MAX_CAPACITY = MAX_CAPACITY;
+window.getTenants = () => tenants;
+
+// ─── 5. RENDER TABEL ────────────────────────────────────────────────────────
 function renderTable() {
   const tbody = document.getElementById('tenantTableBody');
   if (!tbody) return;
@@ -253,6 +318,11 @@ window.showToast = showToast;
 
 // ─── 8. MODAL TAMBAH / EDIT ──────────────────────────────────────────────────
 window.openTenantModal = function (mode, tenantId = null) {
+  if (mode !== 'edit' && tenants.length >= MAX_CAPACITY) {
+    showToast('Kapasitas tenant sudah penuh (maksimum ' + MAX_CAPACITY + ' stan). Penambahan tenant baru tidak dapat dilakukan.', false);
+    return;
+  }
+
   const modal   = document.getElementById('tenantModal');
   const title   = document.getElementById('modalTitle');
   const form    = document.getElementById('tenantForm');
@@ -361,8 +431,13 @@ window.handleFormSubmit = function (e) {
     if (idx !== -1) tenants[idx] = { ...tenants[idx], name, type, zone, booth, pic, role: roleMap[pic] || '', contact, email };
     window.closeTenantModal();
     applyFilters();
+    updateCapacitySummary();
     showToast('Perubahan data tenant ' + editId + ' berhasil disimpan.');
   } else {
+    if (tenants.length >= MAX_CAPACITY) {
+      showToast('Kapasitas tenant sudah penuh (maksimum ' + MAX_CAPACITY + ' stan). Penambahan tenant baru tidak dapat dilakukan.', false);
+      return;
+    }
     const newId = generateNextId();
     tenants.push({ id: newId, name, type, zone, booth, pic, role: roleMap[pic] || '', contact, email, status: 'Terverifikasi' });
     window.closeTenantModal();
@@ -378,6 +453,7 @@ window.handleFormSubmit = function (e) {
     });
     currentPage = Math.max(1, Math.ceil(filteredTenants.length / ITEMS_PER_PAGE));
     renderTable();
+    updateCapacitySummary();
     showToast('Tenant baru "' + name + '" sukses ditambahkan ke daftar.');
   }
 };
@@ -406,6 +482,7 @@ window.confirmDeleteAction = function () {
   const deletedId = _targetDeleteId;
   window.closeDeleteDialog();
   applyFilters();
+  updateCapacitySummary();
   showToast('Data tenant ' + deletedId + ' berhasil dihapus dari sistem.');
 };
 
@@ -420,6 +497,7 @@ window.toggleMapModal = function (show) {
 function init() {
   filteredTenants = [...tenants];
   renderTable();
+  updateCapacitySummary();
 
   // Event delegation pada container tabel yang stabil
   const tableWrapper = document.querySelector('.overflow-x-auto');
