@@ -36,7 +36,7 @@
 <div>
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Aset Perlengkapan</span>
 <div class="flex items-baseline gap-space-xs mt-1">
-<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">156</span>
+<span id="metric-total-assets" class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">0</span>
 <span class="font-label-md text-label-md text-on-surface-variant">Item</span>
 </div>
 </div>
@@ -47,7 +47,7 @@
 <div class="mt-space-md pt-space-xs flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
 <span class="flex items-center gap-1 text-primary">
 <span class="material-symbols-outlined text-body-sm">check_circle</span>
-          8 Kategori utama
+          <span id="metric-category-count">0</span> Kategori utama
         </span>
 <span class="text-on-surface-variant">Terdaftar resmi</span>
 </div>
@@ -58,7 +58,7 @@
 <div>
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Kondisi Baik &amp; Siap</span>
 <div class="flex items-baseline gap-space-xs mt-1">
-<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">148</span>
+<span id="metric-good-assets" class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">0</span>
 <span class="font-label-md text-label-md text-secondary">Item</span>
 </div>
 </div>
@@ -69,10 +69,10 @@
 <div class="mt-space-md">
 <div class="flex justify-between items-center text-label-sm font-label-sm mb-1 text-on-surface-variant">
 <span>Kesiapan Operasional</span>
-<span class="font-bold text-primary">94.8%</span>
+<span id="metric-ready-percent" class="font-bold text-primary">0%</span>
 </div>
 <div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 94.8%;"></div>
+<div id="metric-ready-bar" class="bg-primary h-full rounded-full transition-all duration-700" style="width: 0%;"></div>
 </div>
 </div>
 </div>
@@ -82,7 +82,7 @@
 <div>
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Butuh Perbaikan / Rusak</span>
 <div class="flex items-baseline gap-space-xs mt-1">
-<span class="font-headline-lg text-headline-lg text-error font-bold tracking-tight">8</span>
+<span id="metric-repair-assets" class="font-headline-lg text-headline-lg text-error font-bold tracking-tight">0</span>
 <span class="font-label-md text-label-md text-on-surface-variant">Item</span>
 </div>
 </div>
@@ -93,7 +93,7 @@
 <div class="mt-space-md pt-space-xs flex items-center justify-between text-body-sm font-body-sm">
 <span class="inline-flex items-center gap-1 text-error font-semibold text-label-sm">
 <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
-          5.2% Kritis
+          <span id="metric-repair-percent">0% Kritis</span>
         </span>
 <span class="text-on-surface-variant font-body-sm">2 unit dalam servis</span>
 </div>
@@ -104,7 +104,7 @@
 <div>
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Dipinjam Vendor</span>
 <div class="flex items-baseline gap-space-xs mt-1">
-<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">42</span>
+<span id="metric-borrowed-assets" class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">0</span>
 <span class="font-label-md text-label-md text-on-surface-variant">Item</span>
 </div>
 </div>
@@ -610,25 +610,21 @@
 <!-- Table Pagination Footer -->
 <div class="px-space-md py-space-sm bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm">
 <div class="font-body-sm text-body-sm text-on-surface-variant">
-        Menampilkan <span class="font-semibold text-on-surface" id="showing-count">8</span> dari <span class="font-semibold text-on-surface">156</span> total logistik
+        Menampilkan <span class="font-semibold text-on-surface" id="showing-count">1-4</span> dari <span class="font-semibold text-on-surface" id="total-count">8</span> total logistik
       </div>
-<div class="flex items-center gap-1.5">
-<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container disabled:opacity-40 disabled:cursor-not-allowed transition-colors" disabled="" type="button">
+<div class="flex items-center gap-1.5" id="equipment-pagination">
+<button id="pagination-prev" aria-label="Halaman sebelumnya" class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container disabled:opacity-40 disabled:cursor-not-allowed transition-colors" type="button">
 <span class="material-symbols-outlined text-body-md align-middle">chevron_left</span>
 </button>
-<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm" type="button">1</button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">2</button>
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">3</button>
-<span class="px-1 text-on-surface-variant text-label-sm">...</span>
-<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">20</button>
-<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors" type="button">
+<div id="pagination-pages" class="flex items-center gap-1.5"></div>
+<button id="pagination-next" aria-label="Halaman berikutnya" class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container disabled:opacity-40 disabled:cursor-not-allowed transition-colors" type="button">
 <span class="material-symbols-outlined text-body-md align-middle">chevron_right</span>
 </button>
 </div>
 </div>
 </div>
-<!-- Operational Flow Quick Visual: Logistics Hub Map & Quick Summary -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md mt-space-lg">
+<!-- Panel peta distribusi dan catatan serah-terima dihapus dari tampilan. -->
+<div class="hidden">
 <div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
 <div class="flex items-center justify-between mb-space-sm">
 <div>
@@ -851,6 +847,10 @@
     const emptyResetBtn = document.getElementById('btn-empty-reset');
     const emptyState = document.getElementById('table-empty-state');
     const showingCount = document.getElementById('showing-count');
+    const totalCount = document.getElementById('total-count');
+    const paginationPrev = document.getElementById('pagination-prev');
+    const paginationNext = document.getElementById('pagination-next');
+    const paginationPages = document.getElementById('pagination-pages');
 
     const dialogDelete = document.getElementById('dialog-delete');
     const dialogContent = document.getElementById('dialog-content');
@@ -860,6 +860,63 @@
     const btnExport = document.getElementById('btn-export-logistik');
 
     let rowToDelete = null;
+    let currentPage = 1;
+    const rowsPerPage = 4;
+
+    function getFilteredRows() {
+      const query = (searchInput.value || '').toLowerCase().trim();
+      const condVal = filterKondisi.value;
+      const statusVal = filterStatus.value;
+      return [...document.querySelectorAll('#table-body tr')].filter((row) => {
+        const matchesQuery = !query || ['name', 'location', 'pic', 'id'].some((key) => (row.dataset[key] || '').toLowerCase().includes(query));
+        return matchesQuery && (condVal === 'ALL' || row.dataset.kondisi === condVal) && (statusVal === 'ALL' || row.dataset.status === statusVal);
+      });
+    }
+
+    function renderPagination() {
+      const rows = [...document.querySelectorAll('#table-body tr')];
+      const filteredRows = getFilteredRows();
+      const totalPages = Math.max(1, Math.ceil(filteredRows.length / rowsPerPage));
+      currentPage = Math.min(currentPage, totalPages);
+      const start = (currentPage - 1) * rowsPerPage;
+      const pageRows = filteredRows.slice(start, start + rowsPerPage);
+      rows.forEach((row) => { row.style.display = pageRows.includes(row) ? '' : 'none'; });
+
+      totalCount.textContent = filteredRows.length;
+      showingCount.textContent = filteredRows.length ? `${start + 1}-${Math.min(start + rowsPerPage, filteredRows.length)}` : '0';
+      emptyState.classList.toggle('hidden', filteredRows.length !== 0);
+      paginationPages.innerHTML = '';
+      for (let page = 1; page <= totalPages; page++) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = page;
+        button.className = page === currentPage ? 'px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm' : 'px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm transition-colors';
+        button.addEventListener('click', () => { currentPage = page; renderPagination(); });
+        paginationPages.appendChild(button);
+      }
+      paginationPrev.disabled = currentPage === 1 || !filteredRows.length;
+      paginationNext.disabled = currentPage === totalPages || !filteredRows.length;
+    }
+
+    function updateMetrics() {
+      const rows = getFilteredRows();
+      const quantity = (row) => Number.parseInt(row.dataset.qty || '0', 10) || 0;
+      const total = rows.reduce((sum, row) => sum + quantity(row), 0);
+      const good = rows.filter((row) => row.dataset.kondisi === 'Baik').reduce((sum, row) => sum + quantity(row), 0);
+      const repair = rows.filter((row) => row.dataset.kondisi !== 'Baik').reduce((sum, row) => sum + quantity(row), 0);
+      const borrowed = rows.filter((row) => row.dataset.status === 'Dipinjam').reduce((sum, row) => sum + quantity(row), 0);
+      const categories = new Set(rows.map((row) => (row.dataset.name || '').split(' ')[0])).size;
+      const readyPercent = total ? Math.round((good / total) * 1000) / 10 : 0;
+      const repairPercent = total ? Math.round((repair / total) * 1000) / 10 : 0;
+      document.getElementById('metric-total-assets').textContent = total;
+      document.getElementById('metric-category-count').textContent = categories;
+      document.getElementById('metric-good-assets').textContent = good;
+      document.getElementById('metric-ready-percent').textContent = `${readyPercent}%`;
+      document.getElementById('metric-ready-bar').style.width = `${readyPercent}%`;
+      document.getElementById('metric-repair-assets').textContent = repair;
+      document.getElementById('metric-repair-percent').textContent = `${repairPercent}% Kritis`;
+      document.getElementById('metric-borrowed-assets').textContent = borrowed;
+    }
 
     // Toast notification utility
     function showToast(message, type = 'success') {
@@ -957,44 +1014,9 @@
 
     // Filtering & Search Logic
     function applyFilters() {
-      const query = (searchInput.value || '').toLowerCase().trim();
-      const condVal = filterKondisi.value;
-      const statusVal = filterStatus.value;
-      const rows = document.querySelectorAll('#table-body tr');
-      let visibleCount = 0;
-
-      rows.forEach((row) => {
-        const rowName = (row.dataset.name || '').toLowerCase();
-        const rowLoc = (row.dataset.location || '').toLowerCase();
-        const rowPic = (row.dataset.pic || '').toLowerCase();
-        const rowId = (row.dataset.id || '').toLowerCase();
-        const rowCond = row.dataset.kondisi || '';
-        const rowStat = row.dataset.status || '';
-
-        const matchesQuery = !query || 
-          rowName.includes(query) || 
-          rowLoc.includes(query) || 
-          rowPic.includes(query) || 
-          rowId.includes(query);
-
-        const matchesCond = (condVal === 'ALL') || (rowCond === condVal);
-        const matchesStatus = (statusVal === 'ALL') || (rowStat === statusVal);
-
-        if (matchesQuery && matchesCond && matchesStatus) {
-          row.style.display = '';
-          visibleCount++;
-        } else {
-          row.style.display = 'none';
-        }
-      });
-
-      showingCount.textContent = visibleCount;
-
-      if (visibleCount === 0) {
-        emptyState.classList.remove('hidden');
-      } else {
-        emptyState.classList.add('hidden');
-      }
+      currentPage = 1;
+      renderPagination();
+      updateMetrics();
     }
 
     searchInput.addEventListener('input', applyFilters);
@@ -1011,6 +1033,10 @@
 
     resetFilterBtn.addEventListener('click', resetAllFilters);
     emptyResetBtn.addEventListener('click', resetAllFilters);
+    paginationPrev.addEventListener('click', () => { currentPage--; renderPagination(); });
+    paginationNext.addEventListener('click', () => { currentPage++; renderPagination(); });
+    renderPagination();
+    updateMetrics();
 
     // Edit and Delete Delegations
     document.getElementById('table-body').addEventListener('click', (e) => {
