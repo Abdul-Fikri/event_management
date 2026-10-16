@@ -5,7 +5,7 @@
 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
 <span class="font-semibold text-primary uppercase tracking-wider">Festival Ready</span>
 <span class="text-outline">/</span>
-<span>64 Personel Terdaftar</span>
+<span id="pill-total-panitia">64 Personel Terdaftar</span>
 <span class="text-outline">/</span>
 <span class="text-primary font-medium">Shift Pagi Siaga</span>
 </div>
@@ -49,7 +49,7 @@
 <span class="material-symbols-outlined text-title-sm">badge</span>
 </div>
 <div class="flex flex-col min-w-0">
-<span class="font-headline-md text-headline-md text-on-surface leading-none">64</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none" id="stat-total-panitia">64</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant truncate">Total Panitia</span>
 </div>
 </div>
@@ -58,7 +58,7 @@
 <span class="material-symbols-outlined text-title-sm">domain</span>
 </div>
 <div class="flex flex-col min-w-0">
-<span class="font-headline-md text-headline-md text-on-surface leading-none">8</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none" id="stat-total-divisi">8</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant truncate">Divisi Operasional</span>
 </div>
 </div>
@@ -67,7 +67,7 @@
 <span class="material-symbols-outlined text-title-sm">how_to_reg</span>
 </div>
 <div class="flex flex-col min-w-0">
-<span class="font-headline-md text-headline-md text-primary leading-none">61</span>
+<span class="font-headline-md text-headline-md text-primary leading-none" id="stat-total-hadir">61</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant truncate">Konfirmasi Hadir</span>
 </div>
 </div>
@@ -76,7 +76,7 @@
 <span class="material-symbols-outlined text-title-sm">schedule</span>
 </div>
 <div class="flex flex-col min-w-0">
-<span class="font-headline-md text-headline-md text-secondary leading-none">3</span>
+<span class="font-headline-md text-headline-md text-secondary leading-none" id="stat-total-izin">3</span>
 <span class="font-label-sm text-label-sm text-on-surface-variant truncate">Izin / Cadangan</span>
 </div>
 </div>
@@ -149,398 +149,7 @@
 </tr>
 </thead>
 <tbody class="divide-y divide-surface-container text-body-md text-on-surface" id="panitia-table-body">
-<!-- Row 1 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-001">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">1</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-001</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait photo of a young Indonesian female event leader with warm smile, wearing sleek modern festival lanyard, soft studio lighting in takumi festival sky blue aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKBgJi7WF-LYFKlBwCQnDs-su4qOP-ZqNu-d3ELPFI5Lv2ScfnO7CyQSDMusmP1huXCcgTmNrl_YRJ6jWnITnOoq8-_0MRSbKEbwbSs3QzXRI2Qn6tj3sCk5kc7ga2EAhQj8_hcZjzG7-h1Yk_eKqVJHrJchyCqXC27GHUTR_7PL90I1bxJqnWIilG7lwpdBzf4w0nd8jNHgSruS4lmQWvlQABbQ6d7JyvMU-CrGmjbg3-0XE1-XLw"/>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Amalia Putri</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Penanggung Jawab Harian</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6281234567890" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0812-3456-7890</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-primary-fixed text-on-primary-fixed-variant divisi-field">
-                Acara
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Koordinator Utama</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-002">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">2</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-002</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait photo of a young Indonesian male coordinator in navy work vest, calm focused expression on outdoor festival ground, bright natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDjYbZEFK3V3j-dekpiFJA-XQ_6RnaLYhF_jPiVSkMDKIILVryWenhxNMZr4j6TqGTputHYkJWrIG3ahfLxAKKBS0VNRB_kP_f6uJtvEJaTXuXIo47wyFsXJLtAtQIE2RQwrETMenSS1BWoJQwm-N2qCdmJFWvDQ9_OHAJC6PCgjjL-BeKJJgGeT-ysIYwBedOkYR1pUhKh5eP1qVA1gxgpqGptXS0VyomtykPyO2Wt_Fky2ATmMJx"/>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Dimas Pratama</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Stok &amp; Gudang Utama</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6281398765432" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0813-9876-5432</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-secondary-fixed text-on-secondary-fixed-variant divisi-field">
-                Logistik &amp; Perlengkapan
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Koordinator Divisi</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-003">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">3</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-003</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an energetic Indonesian businesswoman in modern smart casual attire, smiling professionally, soft pastel blue background palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA8WaHg-GzrTRliKQcAVwKu-UROWFqzQ_UZYE45ruKgYDXVn-I2zszfsawebb8vUsiFxIvUGIrjS6e6GaUGJFX5JSOqSD4NSeR_oMcWvkfJnrF0G_zdwVKdYfxtAEa1OiiEB7GjFKvfPGoh1WuvtCWPwOuz1zW182fhhop3gskiHd1QeiZCkJm7NwS-klSMBDiWyhnAdFfKHdc229eghNyMmo3UfZ9b-kEXxGK3GCquGUItngqwWMJ"/>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Farah Nabila</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Hubungan Mitra &amp; Brand</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6282145678901" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0821-4567-8901</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant divisi-field">
-                Sponsorship
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Koordinator Divisi</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-004">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">4</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-004</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-sm">RA</div>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Rian Ardiansyah</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Kurasi Stan Kuliner</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6285711223344" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0857-1122-3344</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary divisi-field">
-                Lomba &amp; Tenant
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Koordinator Divisi</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 5 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-005">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">5</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-005</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-label-sm">JT</div>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Jessica Tan</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Media Sosial &amp; Press</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6287822334455" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0878-2233-4455</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary divisi-field">
-                Humas &amp; Publikasi
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Anggota</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 6 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-006">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">6</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-006</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-surface-container text-secondary flex items-center justify-center font-bold text-label-sm">AF</div>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Ahmad Fauzi</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Gate Barat &amp; Perimeter</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6281933445566" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0819-3344-5566</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-secondary-fixed text-on-secondary-fixed-variant divisi-field">
-                Keamanan
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Anggota</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 7 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-007">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">7</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-007</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-label-sm">GS</div>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Gita Savitri</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Logistik Makanan Artis &amp; Kru</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6281299887766" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0812-9988-7766</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary divisi-field">
-                Konsumsi
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Bendahara Divisi</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 8 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-id="PNT-008">
-<td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">8</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">PNT-008</span>
-</td>
-<td class="py-3.5 px-space-md">
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-bold text-label-sm">KS</div>
-<div class="flex flex-col min-w-0">
-<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">Kevin Sanjaya</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">LED Stage &amp; Ticketing App</span>
-</div>
-</div>
-</td>
-<td class="py-3.5 px-space-md">
-<a class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field" href="https://wa.me/6285266778899" target="_blank">
-<span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-<span>0852-6677-8899</span>
-</a>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant divisi-field">
-                Desain &amp; IT
-              </span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">Anggota</span>
-</td>
-<td class="py-3.5 px-space-md">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                Aktif
-              </span>
-</td>
-<td class="py-3.5 px-space-md text-center">
-<div class="flex items-center justify-center gap-1">
-<button class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail" type="button">
-<span class="material-symbols-outlined text-body-lg">visibility</span>
-</button>
-<button class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data" type="button">
-<span class="material-symbols-outlined text-body-lg">edit</span>
-</button>
-<button class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data" type="button">
-<span class="material-symbols-outlined text-body-lg">delete</span>
-</button>
-</div>
-</td>
-</tr>
+<!-- Baris data dirender secara dinamis oleh panitia.js dengan pagination -->
 </tbody>
 </table>
 </div>
@@ -559,23 +168,11 @@
 </div>
 <!-- Pagination & Summary Bar -->
 <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md px-space-lg py-space-md bg-surface-container-low/50">
-<div class="font-body-sm text-body-sm text-on-surface-variant">
+<div class="font-body-sm text-body-sm text-on-surface-variant" id="panitia-pagination-info">
         Menampilkan <span class="font-semibold text-on-surface">1</span> - <span class="font-semibold text-on-surface">8</span> dari <span class="font-semibold text-on-surface">64</span> panitia
       </div>
-<div class="flex items-center gap-1">
-<button class="h-9 px-space-sm rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm disabled:opacity-40" disabled="" type="button">
-<span class="material-symbols-outlined text-body-md">chevron_left</span>
-<span class="hidden sm:inline">Prev</span>
-</button>
-<button class="h-9 w-9 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm" type="button">1</button>
-<button class="h-9 w-9 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors shadow-sm" type="button">2</button>
-<button class="h-9 w-9 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors shadow-sm" type="button">3</button>
-<span class="px-1 text-outline font-label-md">...</span>
-<button class="h-9 w-9 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors shadow-sm" type="button">8</button>
-<button class="h-9 px-space-sm rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" type="button">
-<span class="hidden sm:inline">Next</span>
-<span class="material-symbols-outlined text-body-md">chevron_right</span>
-</button>
+<div class="flex items-center gap-1" id="panitia-pagination-buttons">
+<!-- Tombol pagination dinamis dirender oleh panitia.js -->
 </div>
 </div>
 </div>
@@ -792,6 +389,20 @@
 </div>
 </div>
 </div>
+<!-- Field: Status Kehadiran -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="input-status">
+              Status Kehadiran <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 appearance-none px-space-md pr-10 rounded-lg bg-surface text-on-surface font-body-md text-body-md shadow-sm focus:ring-2 focus:ring-primary-container focus:outline-none transition-all cursor-pointer" id="input-status" name="status" required="">
+<option value="Aktif" selected="">Aktif (Siaga / Ready)</option>
+<option value="Izin">Izin (Dispensasi)</option>
+<option value="Cadangan">Cadangan (Standby)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-body-md">arrow_drop_down</span>
+</div>
+</div>
 <!-- Field: Catatan Tambahan (Opsional) -->
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1" for="input-catatan">
@@ -881,7 +492,7 @@
 </div>
 <div class="p-space-sm rounded-lg bg-surface-container-low">
 <span class="block font-label-sm text-label-sm text-on-surface-variant">Status Hadir</span>
-<span class="font-label-md text-label-md text-primary font-bold">Siaga (Ready)</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="detail-status">Siaga (Ready)</span>
 </div>
 </div>
 <div class="p-space-sm rounded-lg bg-surface-container-low/60">
@@ -900,371 +511,4 @@
 </div>
 </div>
 </div>
-<script is:inline>
-  (function () {
-    // DOM Elements
-    const searchInput = document.getElementById('search-input');
-    const searchClear = document.getElementById('search-clear');
-    const filterDivisi = document.getElementById('filter-divisi');
-    const filterJabatan = document.getElementById('filter-jabatan');
-    const btnResetFilter = document.getElementById('btn-reset-filter');
-    const btnClearSearchEmpty = document.getElementById('btn-clear-search-empty');
-    const tableBody = document.getElementById('panitia-table-body');
-    const tableEmptyState = document.getElementById('table-empty-state');
-
-    // Modals
-    const modalPanitia = document.getElementById('modal-panitia');
-    const modalPanitiaTitle = document.getElementById('modal-panitia-title');
-    const modalPanitiaIcon = document.getElementById('modal-panitia-icon');
-    const formPanitia = document.getElementById('form-panitia');
-    const btnTambahPanitia = document.getElementById('btn-tambah-panitia');
-    const btnModalClose = document.getElementById('btn-modal-close');
-    const btnModalCancel = document.getElementById('btn-modal-cancel');
-    const inputEditId = document.getElementById('input-edit-id');
-    const inputNama = document.getElementById('input-nama');
-    const inputKontak = document.getElementById('input-kontak');
-    const inputDivisi = document.getElementById('input-divisi');
-    const inputJabatan = document.getElementById('input-jabatan');
-    const inputCatatan = document.getElementById('input-catatan');
-    const inputPanitiaId = document.getElementById('input-panitia-id');
-
-    // Delete Modal
-    const modalDelete = document.getElementById('modal-delete');
-    const btnCancelDelete = document.getElementById('btn-cancel-delete');
-    const btnConfirmDelete = document.getElementById('btn-confirm-delete');
-    const deleteTargetId = document.getElementById('delete-target-id');
-    const deleteTargetName = document.getElementById('delete-target-name');
-    let currentDeleteRow = null;
-
-    // Detail Modal
-    const modalDetail = document.getElementById('modal-detail');
-    const btnCloseDetail = document.getElementById('btn-close-detail');
-    const btnDoneDetail = document.getElementById('btn-done-detail');
-    const detailAvatar = document.getElementById('detail-avatar');
-    const detailId = document.getElementById('detail-id');
-    const detailName = document.getElementById('detail-name');
-    const detailDivisi = document.getElementById('detail-divisi');
-    const detailJabatan = document.getElementById('detail-jabatan');
-    const detailKontak = document.getElementById('detail-kontak');
-
-    // Export Button
-    const btnExport = document.getElementById('btn-export');
-
-    // Toast Manager (Injects cleanly into shell #toast-container)
-    function showToast(message, type = 'success') {
-      const toastContainer = document.getElementById('toast-container');
-      if (!toastContainer) return;
-
-      const toast = document.createElement('div');
-      toast.className = 'pointer-events-auto flex items-center gap-space-sm px-space-md py-space-sm rounded-xl bg-surface-container-lowest shadow-xl border border-surface-container transition-all transform duration-300 translate-y-4 opacity-0';
-      
-      const icon = type === 'success' ? 'check_circle' : 'info';
-      const iconColor = type === 'success' ? 'text-primary' : 'text-secondary';
-
-      toast.innerHTML = `
-        <span class="material-symbols-outlined ${iconColor} text-headline-md">${icon}</span>
-        <div class="flex flex-col">
-          <span class="font-title-sm text-title-sm text-on-surface font-semibold">Pemberitahuan Sistem</span>
-          <span class="font-body-sm text-body-sm text-on-surface-variant">${message}</span>
-        </div>
-        <button type="button" class="ml-2 text-outline hover:text-on-surface" onclick="this.parentElement.remove()">
-          <span class="material-symbols-outlined text-body-md">close</span>
-        </button>
-      `;
-
-      toastContainer.appendChild(toast);
-      // Trigger enter animation
-      requestAnimationFrame(() => {
-        toast.classList.remove('translate-y-4', 'opacity-0');
-      });
-
-      // Auto dismiss after 4 seconds
-      setTimeout(() => {
-        toast.classList.add('opacity-0', 'translate-y-2');
-        setTimeout(() => toast.remove(), 350);
-      }, 4000);
-    }
-
-    // Filter & Search Logic
-    function applyFilters() {
-      const query = (searchInput.value || '').toLowerCase().trim();
-      const divisiVal = filterDivisi.value;
-      const jabatanVal = filterJabatan.value;
-
-      searchClear.classList.toggle('hidden', query.length === 0);
-
-      const rows = tableBody.querySelectorAll('tr');
-      let visibleCount = 0;
-
-      rows.forEach(row => {
-        const id = (row.dataset.id || '').toLowerCase();
-        const name = (row.querySelector('.name-field')?.textContent || '').toLowerCase();
-        const contact = (row.querySelector('.contact-field')?.textContent || '').toLowerCase();
-        const divisi = (row.querySelector('.divisi-field')?.textContent || '').trim();
-        const jabatan = (row.querySelector('.jabatan-field')?.textContent || '').trim();
-
-        const matchQuery = !query || id.includes(query) || name.includes(query) || contact.includes(query) || jabatan.toLowerCase().includes(query);
-        const matchDivisi = divisiVal === 'ALL' || divisi.toLowerCase().includes(divisiVal.toLowerCase());
-        const matchJabatan = jabatanVal === 'ALL' || jabatan.toLowerCase().includes(jabatanVal.toLowerCase());
-
-        if (matchQuery && matchDivisi && matchJabatan) {
-          row.style.display = '';
-          visibleCount++;
-        } else {
-          row.style.display = 'none';
-        }
-      });
-
-      if (visibleCount === 0) {
-        tableEmptyState.classList.remove('hidden');
-        tableEmptyState.classList.add('flex');
-      } else {
-        tableEmptyState.classList.add('hidden');
-        tableEmptyState.classList.remove('flex');
-      }
-    }
-
-    searchInput.addEventListener('input', applyFilters);
-    filterDivisi.addEventListener('change', applyFilters);
-    filterJabatan.addEventListener('change', applyFilters);
-
-    searchClear.addEventListener('click', () => {
-      searchInput.value = '';
-      applyFilters();
-      searchInput.focus();
-    });
-
-    btnResetFilter.addEventListener('click', () => {
-      searchInput.value = '';
-      filterDivisi.value = 'ALL';
-      filterJabatan.value = 'ALL';
-      applyFilters();
-      showToast('Semua filter berhasil disetel ulang.', 'info');
-    });
-
-    btnClearSearchEmpty.addEventListener('click', () => {
-      searchInput.value = '';
-      filterDivisi.value = 'ALL';
-      filterJabatan.value = 'ALL';
-      applyFilters();
-    });
-
-    // Modal Add Open
-    btnTambahPanitia.addEventListener('click', () => {
-      formPanitia.reset();
-      inputEditId.value = '';
-      modalPanitiaTitle.textContent = 'Tambah Data Panitia Baru';
-      modalPanitiaIcon.textContent = 'person_add';
-      
-      const count = tableBody.querySelectorAll('tr').length + 1;
-      const autoId = `PNT-00${count}`;
-      inputPanitiaId.value = `${autoId} (Otomatis)`;
-
-      modalPanitia.classList.remove('hidden');
-    });
-
-    // Modal Close
-    function closeModalPanitia() {
-      modalPanitia.classList.add('hidden');
-      formPanitia.reset();
-    }
-
-    btnModalClose.addEventListener('click', closeModalPanitia);
-    btnModalCancel.addEventListener('click', closeModalPanitia);
-    document.getElementById('modal-panitia-backdrop').addEventListener('click', closeModalPanitia);
-
-    // Form Submit (Add or Edit)
-    formPanitia.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const nama = inputNama.value.trim();
-      const kontak = inputKontak.value.trim();
-      const divisi = inputDivisi.value;
-      const jabatan = inputJabatan.value;
-      const editId = inputEditId.value;
-
-      if (!nama || !kontak || !divisi || !jabatan) return;
-
-      if (editId) {
-        // Edit Existing Row
-        const targetRow = tableBody.querySelector(`tr[data-id="${editId}"]`);
-        if (targetRow) {
-          const nameSpan = targetRow.querySelector('.name-field');
-          const contactSpan = targetRow.querySelector('.contact-field span:last-child');
-          const divisiSpan = targetRow.querySelector('.divisi-field');
-          const jabatanSpan = targetRow.querySelector('.jabatan-field');
-
-          if (nameSpan) nameSpan.textContent = nama;
-          if (contactSpan) contactSpan.textContent = kontak;
-          if (divisiSpan) divisiSpan.textContent = divisi;
-          if (jabatanSpan) jabatanSpan.textContent = jabatan;
-        }
-        showToast(`Data panitia ${editId} (${nama}) berhasil diperbarui!`, 'success');
-      } else {
-        // Add New Row
-        const totalRows = tableBody.querySelectorAll('tr').length + 1;
-        const newId = `PNT-0${totalRows < 10 ? '0' + totalRows : totalRows}`;
-        const initials = nama.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'PN';
-
-        const newRow = document.createElement('tr');
-        newRow.className = 'hover:bg-surface-container-low/60 transition-colors group';
-        newRow.setAttribute('data-id', newId);
-        newRow.innerHTML = `
-          <td class="py-3.5 px-space-md text-center text-on-surface-variant font-medium">${totalRows}</td>
-          <td class="py-3.5 px-space-md">
-            <span class="font-label-md text-label-md font-bold text-primary bg-surface-container-high px-2 py-0.5 rounded">${newId}</span>
-          </td>
-          <td class="py-3.5 px-space-md">
-            <div class="flex items-center gap-space-sm">
-              <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-sm">${initials}</div>
-              <div class="flex flex-col min-w-0">
-                <span class="font-title-sm text-title-sm text-on-surface font-semibold truncate name-field">${nama}</span>
-                <span class="font-body-sm text-body-sm text-on-surface-variant">Personel Terjadwal</span>
-              </div>
-            </div>
-          </td>
-          <td class="py-3.5 px-space-md">
-            <a href="https://wa.me/${kontak.replace(/[^0-9]/g, '')}" target="_blank" class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-label-md contact-field">
-              <span class="material-symbols-outlined text-body-sm text-primary">chat</span>
-              <span>${kontak}</span>
-            </a>
-          </td>
-          <td class="py-3.5 px-space-md">
-            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary divisi-field">
-              ${divisi}
-            </span>
-          </td>
-          <td class="py-3.5 px-space-md">
-            <span class="font-label-md text-label-md text-on-surface font-medium jabatan-field">${jabatan}</span>
-          </td>
-          <td class="py-3.5 px-space-md">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-semibold bg-surface-container-high text-primary">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-              Aktif
-            </span>
-          </td>
-          <td class="py-3.5 px-space-md text-center">
-            <div class="flex items-center justify-center gap-1">
-              <button type="button" class="btn-action-detail p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Lihat Detail">
-                <span class="material-symbols-outlined text-body-lg">visibility</span>
-              </button>
-              <button type="button" class="btn-action-edit p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Edit Data">
-                <span class="material-symbols-outlined text-body-lg">edit</span>
-              </button>
-              <button type="button" class="btn-action-delete p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" title="Hapus Data">
-                <span class="material-symbols-outlined text-body-lg">delete</span>
-              </button>
-            </div>
-          </td>
-        `;
-
-        tableBody.appendChild(newRow);
-        attachRowEvents(newRow);
-        showToast('Data panitia baru berhasil disimpan ke sistem!', 'success');
-      }
-
-      closeModalPanitia();
-      applyFilters();
-    });
-
-    // Row Actions Delegator & Binder
-    function attachRowEvents(row) {
-      // Edit button
-      const btnEdit = row.querySelector('.btn-action-edit');
-      if (btnEdit) {
-        btnEdit.addEventListener('click', () => {
-          const rowId = row.dataset.id;
-          const name = row.querySelector('.name-field')?.textContent || '';
-          const contact = row.querySelector('.contact-field span:last-child')?.textContent || '';
-          const divisi = row.querySelector('.divisi-field')?.textContent.trim() || '';
-          const jabatan = row.querySelector('.jabatan-field')?.textContent.trim() || '';
-
-          inputEditId.value = rowId;
-          inputPanitiaId.value = rowId;
-          inputNama.value = name;
-          inputKontak.value = contact;
-          inputDivisi.value = divisi;
-          inputJabatan.value = jabatan;
-
-          modalPanitiaTitle.textContent = `Edit Data Panitia (${rowId})`;
-          modalPanitiaIcon.textContent = 'edit_note';
-          modalPanitia.classList.remove('hidden');
-        });
-      }
-
-      // Delete button
-      const btnDelete = row.querySelector('.btn-action-delete');
-      if (btnDelete) {
-        btnDelete.addEventListener('click', () => {
-          currentDeleteRow = row;
-          const rowId = row.dataset.id;
-          const name = row.querySelector('.name-field')?.textContent || '';
-
-          deleteTargetId.textContent = rowId;
-          deleteTargetName.textContent = name;
-          modalDelete.classList.remove('hidden');
-        });
-      }
-
-      // Detail button
-      const btnDetail = row.querySelector('.btn-action-detail');
-      if (btnDetail) {
-        btnDetail.addEventListener('click', () => {
-          const rowId = row.dataset.id;
-          const name = row.querySelector('.name-field')?.textContent || '';
-          const contact = row.querySelector('.contact-field span:last-child')?.textContent || '';
-          const divisi = row.querySelector('.divisi-field')?.textContent.trim() || '';
-          const jabatan = row.querySelector('.jabatan-field')?.textContent.trim() || '';
-
-          detailId.textContent = rowId;
-          detailName.textContent = name;
-          detailDivisi.textContent = divisi;
-          detailJabatan.textContent = jabatan;
-          detailKontak.textContent = contact;
-          detailAvatar.textContent = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'PT';
-
-          modalDetail.classList.remove('hidden');
-        });
-      }
-    }
-
-    // Attach to existing rows
-    tableBody.querySelectorAll('tr').forEach(attachRowEvents);
-
-    // Delete confirmation handling
-    function closeDeleteModal() {
-      modalDelete.classList.add('hidden');
-      currentDeleteRow = null;
-    }
-
-    btnCancelDelete.addEventListener('click', closeDeleteModal);
-    document.getElementById('modal-delete-backdrop').addEventListener('click', closeDeleteModal);
-
-    btnConfirmDelete.addEventListener('click', () => {
-      if (currentDeleteRow) {
-        const id = currentDeleteRow.dataset.id;
-        const name = currentDeleteRow.querySelector('.name-field')?.textContent || 'Panitia';
-        currentDeleteRow.remove();
-        showToast(`Data ${id} (${name}) berhasil dihapus!`, 'success');
-        closeDeleteModal();
-        applyFilters();
-      }
-    });
-
-    // Detail Modal Close
-    function closeDetailModal() {
-      modalDetail.classList.add('hidden');
-    }
-    btnCloseDetail.addEventListener('click', closeDetailModal);
-    btnDoneDetail.addEventListener('click', closeDetailModal);
-    document.getElementById('modal-detail-backdrop').addEventListener('click', closeDetailModal);
-
-    // Export Action Micro-feedback
-    btnExport.addEventListener('click', () => {
-      showToast('Memproses file export: Takumi_Panitia_Manifest_2025.xlsx...', 'info');
-      setTimeout(() => {
-        showToast('Manifest panitia siap diunduh.', 'success');
-      }, 1500);
-    });
-
-  })();
-</script>
+<script src="/scripts/panitia.js" defer></script>

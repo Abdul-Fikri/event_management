@@ -1,6 +1,6 @@
 <div class="flex flex-col w-full">
 <div class="relative py-space-md mb-space-md">
-<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
 <div class="space-y-1">
 <div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider">
 <span class="w-2 h-2 rounded-full bg-primary"></span>
@@ -11,12 +11,16 @@
           Kelola struktur divisi dan alokasi anggota panitia Takumi Festival secara terpadu demi kelancaran koordinasi lapangan.
         </p>
 </div>
-<div class="flex flex-wrap items-center gap-space-sm">
-<div class="relative min-w-[280px]">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-body-lg text-outline">search</span>
-<input class="w-full h-10 pl-10 pr-4 rounded-lg bg-surface-container-lowest text-on-surface text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container" id="searchInput" oninput="filterDivisiTable()" placeholder="Cari nama divisi, ID, koordinator..." type="text"/>
+<!-- Search & Tambah Divisi Toolbar: Rata Horizontal & Sejajar -->
+<div class="flex items-center gap-space-sm flex-nowrap shrink-0">
+<div class="relative w-64 sm:w-80">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-body-lg text-outline pointer-events-none">search</span>
+<input class="w-full h-11 pl-11 pr-10 rounded-lg bg-surface-container-lowest text-on-surface text-body-md placeholder:text-outline shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container border border-surface-container transition-all" id="searchInput" placeholder="Cari nama divisi, ID, koordinator..." type="text"/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" id="searchClear" type="button">
+<span class="material-symbols-outlined text-body-sm">close</span>
+</button>
 </div>
-<button class="h-10 px-space-md rounded-lg bg-primary hover:bg-primary-container hover:text-on-primary-container text-on-primary font-title-sm text-title-sm shadow-md transition-all flex items-center gap-space-xs" onclick="openModal('modal-tambah')" type="button">
+<button class="h-11 px-space-md rounded-lg bg-primary hover:bg-primary-container hover:text-on-primary-container text-on-primary font-title-sm text-title-sm shadow-md transition-all flex items-center gap-space-xs whitespace-nowrap shrink-0" id="btnTambahDivisi" type="button">
 <span class="material-symbols-outlined text-body-lg">add</span>
 <span>+ Tambah Divisi</span>
 </button>
@@ -28,7 +32,7 @@
 <div class="flex items-start justify-between">
 <div class="space-y-1">
 <span class="font-label-md text-label-md text-on-surface-variant">Total Divisi</span>
-<div class="font-headline-lg text-headline-lg text-on-surface">8 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">Divisi Resmi</span></div>
+<div class="font-headline-lg text-headline-lg text-on-surface" id="statTotalDivisi">10 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">Divisi Resmi</span></div>
 </div>
 <div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
 <span class="material-symbols-outlined text-headline-md">domain</span>
@@ -43,7 +47,7 @@
 <div class="flex items-start justify-between">
 <div class="space-y-1">
 <span class="font-label-md text-label-md text-on-surface-variant">Rata-rata Anggota</span>
-<div class="font-headline-lg text-headline-lg text-on-surface">8 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">Panitia / Divisi</span></div>
+<div class="font-headline-lg text-headline-lg text-on-surface" id="statAvgAnggota">7 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">Panitia / Divisi</span></div>
 </div>
 <div class="w-10 h-10 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center">
 <span class="material-symbols-outlined text-headline-md">groups</span>
@@ -58,14 +62,14 @@
 <div class="flex items-start justify-between">
 <div class="space-y-1">
 <span class="font-label-md text-label-md text-on-surface-variant">Divisi Terbesar</span>
-<div class="font-title-sm text-title-sm text-on-surface font-bold leading-tight">Logistik &amp; Perlengkapan</div>
+<div class="font-title-sm text-title-sm text-on-surface font-bold leading-tight" id="statDivisiTerbesar">Logistik &amp; Perlengkapan</div>
 </div>
 <div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
 <span class="material-symbols-outlined text-headline-md">inventory_2</span>
 </div>
 </div>
 <div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
-<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-semibold">14 Panitia</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-semibold" id="statMaxAnggota">14 Panitia</span>
 <span class="text-primary font-medium">93% Kapasitas</span>
 </div>
 </div>
@@ -111,321 +115,30 @@
 </tr>
 </thead>
 <tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="12" data-id="DIV-01" data-koor="Budi Santoso" data-kuota="15" data-nama="Divisi Acara">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">1</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-01</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Acara</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  12 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>12/15 Kuota</span>
-<span class="font-semibold text-primary">80%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Budi Santoso</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-01', 'Divisi Acara', '12', '15', 'Budi Santoso')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-01', 'Divisi Acara', 15)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-01', 'Divisi Acara')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="14" data-id="DIV-02" data-koor="Dimas Pratama" data-kuota="15" data-nama="Divisi Logistik &amp; Perlengkapan">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">2</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-02</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Logistik &amp; Perlengkapan</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  14 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>14/15 Kuota</span>
-<span class="font-semibold text-primary">93%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 93%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Dimas Pratama</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-02', 'Divisi Logistik &amp; Perlengkapan', '14', '15', 'Dimas Pratama')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-02', 'Divisi Logistik &amp; Perlengkapan', 15)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-02', 'Divisi Logistik &amp; Perlengkapan')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="6" data-id="DIV-03" data-koor="Farah Nabila" data-kuota="8" data-nama="Divisi Sponsorship &amp; Dana">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">3</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-03</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Sponsorship &amp; Dana</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  6 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>6/8 Kuota</span>
-<span class="font-semibold text-primary">75%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 75%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Farah Nabila</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-03', 'Divisi Sponsorship &amp; Dana', '6', '8', 'Farah Nabila')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-03', 'Divisi Sponsorship &amp; Dana', 8)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-03', 'Divisi Sponsorship &amp; Dana')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="8" data-id="DIV-04" data-koor="Siti Rahma" data-kuota="10" data-nama="Divisi Lomba &amp; Kompetisi">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">4</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-04</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Lomba &amp; Kompetisi</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  8 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>8/10 Kuota</span>
-<span class="font-semibold text-primary">80%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Siti Rahma</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-04', 'Divisi Lomba &amp; Kompetisi', '8', '10', 'Siti Rahma')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-04', 'Divisi Lomba &amp; Kompetisi', 10)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-04', 'Divisi Lomba &amp; Kompetisi')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="7" data-id="DIV-05" data-koor="Hendra Kurniawan" data-kuota="8" data-nama="Divisi Tenant &amp; Bazaar">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">5</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-05</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Tenant &amp; Bazaar</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  7 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>7/8 Kuota</span>
-<span class="font-semibold text-primary">87%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 87%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Hendra Kurniawan</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-05', 'Divisi Tenant &amp; Bazaar', '7', '8', 'Hendra Kurniawan')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-05', 'Divisi Tenant &amp; Bazaar', 8)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-05', 'Divisi Tenant &amp; Bazaar')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="6" data-id="DIV-06" data-koor="Jessica Tan" data-kuota="8" data-nama="Divisi Publikasi &amp; Dokumentasi">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">6</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-06</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Publikasi &amp; Dokumentasi</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  6 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>6/8 Kuota</span>
-<span class="font-semibold text-primary">75%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 75%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Jessica Tan</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-06', 'Divisi Publikasi &amp; Dokumentasi', '6', '8', 'Jessica Tan')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-06', 'Divisi Publikasi &amp; Dokumentasi', 8)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-06', 'Divisi Publikasi &amp; Dokumentasi')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="6" data-id="DIV-07" data-koor="Ahmad Fauzi" data-kuota="6" data-nama="Divisi Keamanan &amp; Ketertiban">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">7</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-07</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Keamanan &amp; Ketertiban</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  6 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>6/6 Kuota (Penuh)</span>
-<span class="font-semibold text-primary">100%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 100%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Ahmad Fauzi</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-07', 'Divisi Keamanan &amp; Ketertiban', '6', '6', 'Ahmad Fauzi')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-07', 'Divisi Keamanan &amp; Ketertiban', 6)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-07', 'Divisi Keamanan &amp; Ketertiban')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-ang="5" data-id="DIV-08" data-koor="Gita Savitri" data-kuota="6" data-nama="Divisi Konsumsi &amp; Medis">
-<td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">8</td>
-<td class="py-space-sm px-space-md">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">DIV-08</span>
-</td>
-<td class="py-space-sm px-space-md font-medium text-on-surface">Divisi Konsumsi &amp; Medis</td>
-<td class="py-space-sm px-space-md">
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-<span class="material-symbols-outlined text-body-sm text-primary">person</span>
-                  5 Panitia
-                </span>
-</td>
-<td class="py-space-sm px-space-md">
-<div class="space-y-1">
-<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-<span>5/6 Kuota</span>
-<span class="font-semibold text-primary">83%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-<div class="bg-primary h-1.5 rounded-full" style="width: 83%"></div>
-</div>
-</div>
-</td>
-<td class="py-space-sm px-space-md text-on-surface-variant">Gita Savitri</td>
-<td class="py-space-sm px-space-md text-right">
-<div class="flex items-center justify-end gap-space-xs">
-<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" onclick="viewDetail('DIV-08', 'Divisi Konsumsi &amp; Medis', '5', '6', 'Gita Savitri')" title="Detail Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="editDivisi('DIV-08', 'Divisi Konsumsi &amp; Medis', 6)" title="Edit Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" onclick="confirmDelete('DIV-08', 'Divisi Konsumsi &amp; Medis')" title="Hapus Divisi" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
+<!-- Baris data divisi dirender secara dinamis oleh divisi.js dengan pagination -->
 </tbody>
 </table>
 </div>
-<div class="p-space-md bg-surface-container-low flex flex-wrap items-center justify-between text-on-surface-variant font-label-sm text-label-sm gap-space-sm">
-<div class="flex items-center gap-2">
-<span>Struktur Data ERD: Relasi Utama <code class="px-1.5 py-0.5 rounded bg-surface text-primary font-mono font-bold">id_divisi</code> → <code class="px-1.5 py-0.5 rounded bg-surface text-primary font-mono font-bold">nama_divisi</code></span>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-space-xl px-space-md text-center" id="divisiEmptyState">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-headline-xl">search_off</span>
 </div>
-<div class="flex items-center gap-1">
-<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-medium">Sebelumnya</button>
-<span class="px-2 text-on-surface font-bold">1 / 1</span>
-<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-medium" disabled="">Selanjutnya</button>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold mb-1">Data Divisi Tidak Ditemukan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-space-md">
+Tidak ada data divisi yang cocok dengan kata kunci pencarian.
+</p>
+<button class="px-space-md h-10 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors" id="btnClearSearchDivisi" type="button">
+Bersihkan Pencarian
+</button>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between text-on-surface-variant font-label-sm text-label-sm gap-space-sm border-t border-surface-container">
+<div class="font-body-sm text-body-sm text-on-surface-variant" id="divisiPaginationNotice">
+Menampilkan <span class="font-semibold text-on-surface">1 - 5</span> dari <span class="font-semibold text-on-surface">10</span> divisi
+</div>
+<div class="inline-flex items-center gap-1" id="divisiPaginationButtons">
+<!-- Tombol pagination dirender oleh divisi.js -->
 </div>
 </div>
 </div>
@@ -441,63 +154,12 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
           Indikator visual persentase pemenuhan kuota staf per unit kerja festival.
         </p>
-<div class="space-y-space-sm">
-<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
-<div class="flex items-center justify-between mb-1">
-<span class="font-title-sm text-title-sm text-on-surface text-sm">Divisi Acara</span>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold">80%</span>
-</div>
-<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1.5">
-<span>12 Panitia Aktif</span>
-<span>Target: 15</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
-</div>
-</div>
-<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
-<div class="flex items-center justify-between mb-1">
-<span class="font-title-sm text-title-sm text-on-surface text-sm">Logistik &amp; Perlengkapan</span>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-bold">93%</span>
-</div>
-<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1.5">
-<span>14 Panitia Aktif</span>
-<span>Target: 15</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 93%"></div>
-</div>
-</div>
-<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
-<div class="flex items-center justify-between mb-1">
-<span class="font-title-sm text-title-sm text-on-surface text-sm">Sponsorship &amp; Dana</span>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-bold">75%</span>
-</div>
-<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1.5">
-<span>6 Panitia Aktif</span>
-<span>Target: 8</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
-</div>
-</div>
-<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
-<div class="flex items-center justify-between mb-1">
-<span class="font-title-sm text-title-sm text-on-surface text-sm">Keamanan &amp; Ketertiban</span>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary text-on-primary font-bold">100% Penuh</span>
-</div>
-<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1.5">
-<span>6 Panitia Aktif</span>
-<span>Target: 6</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
-</div>
-</div>
+<div class="space-y-space-sm" id="divisionAllocationList">
+<!-- Monitor alokasi divisi dirender dinamis oleh divisi.js -->
 </div>
 <div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
 <span>Total Kebutuhan Acara:</span>
-<span class="font-bold text-on-surface">64 dari 76 Panitia</span>
+<span class="font-bold text-on-surface" id="statTotalKebutuhan">68 dari 84 Panitia</span>
 </div>
 </div>
 <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden">
@@ -518,7 +180,7 @@
 <span class="material-symbols-outlined text-primary text-headline-md">domain_add</span>
 <h3 class="font-headline-md text-headline-md text-on-surface" id="modalTitle">Tambah Divisi Baru</h3>
 </div>
-<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors" onclick="closeModal('modalTambahDivisi')" type="button">
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors" data-close-modal="modalTambahDivisi" type="button">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -543,7 +205,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Batas kuota penugasan anggota untuk indikator kapasitas.</p>
 </div>
 <div class="pt-space-sm flex items-center justify-end gap-space-sm">
-<button class="h-10 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors" onclick="closeModal('modalTambahDivisi')" type="button">
+<button class="h-10 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors" data-close-modal="modalTambahDivisi" type="button">
             Batal
           </button>
 <button class="h-10 px-space-md rounded-lg bg-primary hover:bg-primary-container hover:text-on-primary-container text-on-primary font-title-sm text-title-sm shadow-md transition-all flex items-center gap-space-xs" type="submit">
@@ -564,7 +226,7 @@
         Apakah Anda yakin ingin menghapus divisi ini? Tindakan ini tidak dapat dibatalkan dan akan mempengaruhi alokasi panitia.
       </p>
 <div class="flex items-center justify-end gap-space-sm">
-<button class="h-10 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors" onclick="closeModal('modalConfirmDelete')" type="button">
+<button class="h-10 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors" data-close-modal="modalConfirmDelete" type="button">
           Batal
         </button>
 <button class="h-10 px-space-md rounded-lg bg-error text-on-error hover:bg-on-error-container transition-colors font-title-sm text-title-sm shadow-sm" onclick="executeDelete()" type="button">
@@ -580,7 +242,7 @@
 <span class="material-symbols-outlined text-primary text-headline-md">info</span>
 <h3 class="font-headline-md text-headline-md text-on-surface" id="detailModalTitle">Detail Divisi</h3>
 </div>
-<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors" onclick="closeModal('modalDetailDivisi')" type="button">
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors" data-close-modal="modalDetailDivisi" type="button">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -614,215 +276,11 @@
 </div>
 </div>
 <div class="mt-space-lg flex justify-end">
-<button class="h-10 px-space-md rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-title-sm text-title-sm transition-colors" onclick="closeModal('modalDetailDivisi')" type="button">
+<button class="h-10 px-space-md rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container font-title-sm text-title-sm transition-colors" data-close-modal="modalDetailDivisi" type="button">
           Tutup
         </button>
 </div>
 </div>
 </div>
-<script is:inline>
-    let activeDivisiToDelete = null;
-
-    function openModal(id) {
-      const modal = id === 'modal-tambah' ? document.getElementById('modalTambahDivisi') : document.getElementById(id);
-      if (!modal) return;
-      
-      if (id === 'modal-tambah') {
-        document.getElementById('modalTitle').textContent = 'Tambah Divisi Baru';
-        document.getElementById('formActionType').value = 'add';
-        document.getElementById('divisiForm').reset();
-      }
-
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        const card = modal.querySelector('div[id$="Card"]');
-        if (card) {
-          card.classList.remove('scale-95');
-          card.classList.add('scale-100');
-        }
-      }, 10);
-    }
-
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      if (!modal) return;
-      modal.classList.add('opacity-0');
-      const card = modal.querySelector('div[id$="Card"]');
-      if (card) {
-        card.classList.remove('scale-100');
-        card.classList.add('scale-95');
-      }
-      setTimeout(() => {
-        modal.classList.add('hidden');
-      }, 200);
-    }
-
-    function editDivisi(id, nama, kuota) {
-      document.getElementById('modalTitle').textContent = 'Ubah Data Divisi: ' + id;
-      document.getElementById('formActionType').value = 'edit';
-      document.getElementById('editDivisiId').value = id;
-      document.getElementById('namaDivisi').value = nama;
-      document.getElementById('targetKuota').value = kuota;
-      document.getElementById('deskripsiTugas').value = 'Divisi ini bertanggung jawab penuh atas pelaksanaan aspek ' + nama + ' pada festival.';
-      openModal('modalTambahDivisi');
-    }
-
-    function confirmDelete(id, nama) {
-      activeDivisiToDelete = id;
-      document.getElementById('deletePromptText').textContent = 'Apakah Anda yakin ingin menghapus "' + nama + '" (' + id + ')? Tindakan ini akan menghapus alokasi anggota terkait.';
-      openModal('modalConfirmDelete');
-    }
-
-    function executeDelete() {
-      if (!activeDivisiToDelete) return;
-      const rows = document.querySelectorAll('#divisiTable tbody tr');
-      rows.forEach(r => {
-        if (r.getAttribute('data-id') === activeDivisiToDelete) {
-          r.remove();
-        }
-      });
-      closeModal('modalConfirmDelete');
-      showToast('Data divisi berhasil dihapus dari sistem.', 'success');
-      activeDivisiToDelete = null;
-      updateTotalDivisiCount();
-    }
-
-    function viewDetail(id, nama, ang, kuota, koor) {
-      document.getElementById('detailModalTitle').textContent = nama;
-      document.getElementById('detailId').textContent = id;
-      document.getElementById('detailKoor').textContent = koor;
-      document.getElementById('detailAnggota').textContent = ang + ' Panitia';
-      document.getElementById('detailQuotaText').textContent = ang + ' dari ' + kuota + ' Kuota';
-      const pct = Math.round((parseInt(ang) / parseInt(kuota)) * 100);
-      document.getElementById('detailPercent').textContent = pct + '%';
-      document.getElementById('detailProgressBar').style.width = pct + '%';
-      openModal('modalDetailDivisi');
-    }
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const nama = document.getElementById('namaDivisi').value.trim();
-      const kuota = document.getElementById('targetKuota').value;
-      const action = document.getElementById('formActionType').value;
-
-      if (action === 'add') {
-        const tbody = document.querySelector('#divisiTable tbody');
-        const count = tbody.querySelectorAll('tr').length + 1;
-        const newId = 'DIV-0' + (count < 10 ? '0' + count : count);
-        
-        const tr = document.createElement('tr');
-        tr.className = 'hover:bg-surface-container-low/60 transition-colors group';
-        tr.setAttribute('data-id', newId);
-        tr.setAttribute('data-nama', nama);
-        tr.setAttribute('data-ang', '0');
-        tr.setAttribute('data-kuota', kuota);
-        tr.setAttribute('data-koor', 'Belum Ditunjuk');
-        
-        tr.innerHTML = `
-          <td class="py-space-sm px-space-md text-center text-on-surface-variant font-label-md">${count}</td>
-          <td class="py-space-sm px-space-md">
-            <span class="px-2 py-0.5 rounded bg-surface-container text-primary font-mono font-label-sm text-label-sm font-semibold">${newId}</span>
-          </td>
-          <td class="py-space-sm px-space-md font-medium text-on-surface">${nama}</td>
-          <td class="py-space-sm px-space-md">
-            <span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface">
-              <span class="material-symbols-outlined text-body-sm text-primary">person</span>
-              0 Panitia
-            </span>
-          </td>
-          <td class="py-space-sm px-space-md">
-            <div class="space-y-1">
-              <div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
-                <span>0/${kuota} Kuota</span>
-                <span class="font-semibold text-primary">0%</span>
-              </div>
-              <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
-                <div class="bg-primary h-1.5 rounded-full" style="width: 0%"></div>
-              </div>
-            </div>
-          </td>
-          <td class="py-space-sm px-space-md text-on-surface-variant italic">Belum Ditunjuk</td>
-          <td class="py-space-sm px-space-md text-right">
-            <div class="flex items-center justify-end gap-space-xs">
-              <button type="button" onclick="viewDetail('${newId}', '${nama}', '0', '${kuota}', 'Belum Ditunjuk')" class="p-1 rounded text-primary hover:bg-surface-container transition-colors" title="Detail Divisi">
-                <span class="material-symbols-outlined text-body-md">visibility</span>
-              </button>
-              <button type="button" onclick="editDivisi('${newId}', '${nama}', ${kuota})" class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" title="Edit Divisi">
-                <span class="material-symbols-outlined text-body-md">edit</span>
-              </button>
-              <button type="button" onclick="confirmDelete('${newId}', '${nama}')" class="p-1 rounded text-error hover:bg-error-container/30 transition-colors" title="Hapus Divisi">
-                <span class="material-symbols-outlined text-body-md">delete</span>
-              </button>
-            </div>
-          </td>
-        `;
-        tbody.appendChild(tr);
-        showToast('Divisi "' + nama + '" berhasil ditambahkan.', 'success');
-      } else {
-        const editId = document.getElementById('editDivisiId').value;
-        const rows = document.querySelectorAll('#divisiTable tbody tr');
-        rows.forEach(r => {
-          if (r.getAttribute('data-id') === editId) {
-            r.setAttribute('data-nama', nama);
-            r.setAttribute('data-kuota', kuota);
-            r.children[2].textContent = nama;
-          }
-        });
-        showToast('Divisi ' + editId + ' berhasil diperbarui.', 'success');
-      }
-
-      closeModal('modalTambahDivisi');
-      updateTotalDivisiCount();
-    }
-
-    function updateTotalDivisiCount() {
-      const count = document.querySelectorAll('#divisiTable tbody tr').length;
-      const countLabel = document.getElementById('divisiCountLabel');
-      if (countLabel) countLabel.textContent = count + ' Divisi';
-    }
-
-    function filterDivisiTable() {
-      const q = document.getElementById('searchInput').value.toLowerCase();
-      const rows = document.querySelectorAll('#divisiTable tbody tr');
-      let visible = 0;
-      rows.forEach(r => {
-        const text = r.innerText.toLowerCase();
-        if (text.includes(q)) {
-          r.style.display = '';
-          visible++;
-        } else {
-          r.style.display = 'none';
-        }
-      });
-      const countLabel = document.getElementById('divisiCountLabel');
-      if (countLabel) countLabel.textContent = visible + ' Divisi';
-    }
-
-    function showToast(message, type = 'info') {
-      const toastContainer = document.getElementById('toast-container');
-      if (!toastContainer) return;
-      const toast = document.createElement('div');
-      toast.className = 'flex items-center gap-2 px-4 py-3 rounded-lg shadow-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md transform transition-all duration-300 translate-y-2 pointer-events-auto';
-      
-      const icon = type === 'success' ? 'check_circle' : 'info';
-      const iconColor = type === 'success' ? 'text-primary' : 'text-secondary';
-      
-      toast.innerHTML = `
-        <span class="material-symbols-outlined ${iconColor}">${icon}</span>
-        <span>${message}</span>
-      `;
-      
-      toastContainer.appendChild(toast);
-      setTimeout(() => {
-        toast.classList.remove('translate-y-2');
-        toast.classList.add('translate-y-0');
-      }, 10);
-
-      setTimeout(() => {
-        toast.classList.add('opacity-0', 'translate-y-2');
-        setTimeout(() => toast.remove(), 300);
-      }, 3500);
-    }
-  </script>
 </div>
+<script src="/scripts/divisi.js" defer></script>
