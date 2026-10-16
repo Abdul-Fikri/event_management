@@ -14,7 +14,7 @@
 <span class="material-symbols-outlined text-body-lg text-secondary">print</span>
 <span>Cetak Rekap Peserta</span>
 </button>
-<button class="h-10 px-space-md rounded-xl bg-primary hover:bg-on-primary-container text-on-primary font-label-md text-label-md flex items-center gap-space-xs shadow-md transition-all active:scale-[0.98]" onclick="openModal('modal-form-lomba')" type="button">
+<button class="h-10 px-space-md rounded-xl bg-primary hover:bg-on-primary-container text-on-primary font-label-md text-label-md flex items-center gap-space-xs shadow-md transition-all active:scale-[0.98]" onclick="handleAddLomba()" type="button">
 <span class="material-symbols-outlined text-body-lg" style="font-variation-settings: 'FILL' 1;">trophy</span>
 <span>+ Tambah Lomba</span>
 </button>
@@ -32,7 +32,7 @@
 </div>
 <div class="mt-4">
 <div class="flex items-baseline gap-space-xs">
-<span class="font-headline-xl text-headline-xl text-on-surface">8</span>
+<span class="font-headline-xl text-headline-xl text-on-surface" id="stat-total-cabang">8</span>
 <span class="font-title-sm text-title-sm text-on-surface-variant">Kategori</span>
 </div>
 <div class="flex items-center gap-1.5 mt-2 text-primary font-label-sm text-label-sm">
@@ -57,11 +57,11 @@
 </div>
 <div class="mt-4">
 <div class="flex items-baseline gap-space-xs">
-<span class="font-headline-xl text-headline-xl text-on-surface">184</span>
-<span class="font-title-sm text-title-sm text-on-surface-variant">/ 213 Slot</span>
+<span class="font-headline-xl text-headline-xl text-on-surface" id="stat-total-peserta">184</span>
+<span class="font-title-sm text-title-sm text-on-surface-variant" id="stat-total-kuota">/ 213 Slot</span>
 </div>
 <div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2.5 overflow-hidden">
-<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 86.3%;"></div>
+<div class="bg-primary h-full rounded-full transition-all duration-700" id="stat-peserta-progress" style="width: 86.3%;"></div>
 </div>
 </div>
 </div>
@@ -74,12 +74,12 @@
 </div>
 </div>
 <div class="mt-4">
-<div class="font-title-sm text-title-sm text-on-surface truncate">Cosplay Walk</div>
+<div class="font-title-sm text-title-sm text-on-surface truncate" id="stat-popular-name">Cosplay Walk Competition</div>
 <div class="flex items-baseline gap-space-xs mt-1">
-<span class="font-headline-md text-headline-md text-primary">45</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Pendaftar (90% Slot)</span>
+<span class="font-headline-md text-headline-md text-primary" id="stat-popular-count">45</span>
+<span class="font-label-md text-label-md text-on-surface-variant" id="stat-popular-desc">Pendaftar (90% Slot)</span>
 </div>
-<span class="inline-block mt-2 font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-primary-fixed-variant">Hall A Indoor</span>
+<span class="inline-block mt-2 font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-primary-fixed-variant" id="stat-popular-location">Hall A - Indoor</span>
 </div>
 </div>
 <!-- Card 4: Total Hadiah Acara -->
@@ -91,7 +91,7 @@
 </div>
 </div>
 <div class="mt-4">
-<div class="font-headline-md text-headline-md text-on-surface tracking-tight">Rp 18.500.000</div>
+<div class="font-headline-md text-headline-md text-on-surface tracking-tight" id="stat-total-hadiah">Rp 18.500.000</div>
 <div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-sm text-label-sm">
 <span class="material-symbols-outlined text-body-sm text-secondary">verified</span>
 <span>Didukung Sponsor Utama</span>
@@ -143,438 +143,15 @@
 </tr>
 </thead>
 <tbody class="divide-y divide-surface-container text-body-sm font-body-sm text-on-surface" id="lomba-tbody">
-<!-- Row 1 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Cosplay &amp; Performance" data-search="lmb-01 cosplay walk competition siti rahma hall a indoor">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">1</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-01</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Cosplay Walk Competition</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Kategori individu costume player karakter anime, game, &amp; manga</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Cosplay &amp; Perf.
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>45 / 50</span>
-<span class="text-primary font-bold">90%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 90%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">18 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">11:00 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">apartment</span>
-                Hall A - Indoor
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center justify-center text-label-sm">SR</div>
-<span class="font-medium">Siti Rahma</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-01', 'Cosplay Walk Competition', 'Cosplay &amp; Performance', '45 / 50 Peserta', '18 Okt 2025, 11:00 WIB', 'Hall A - Indoor', 'Siti Rahma', 'Lomba peragaan kostum karakter Jepang dengan durasi jalan panggung 60 detik per peserta. Penilaian meliputi akurasi kostum, gesture panggung, dan interaksi audiens.')" title="Detail" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-01', 'Cosplay Walk Competition', 'Cosplay &amp; Performance', 50, '2025-10-18T11:00', 'Hall A - Indoor', 'Siti Rahma')" title="Edit" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-01', 'Cosplay Walk Competition')" title="Hapus" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Musik &amp; Band" data-search="lmb-02 j-song acoustic cover competition farah nabila panggung utama">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">2</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-02</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">J-Song Acoustic Cover Competition</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Format akustik maksimal 4 personel membawakan lagu Jepang</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Musik &amp; Band
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>16 / 16</span>
-<span class="text-error font-bold">Penuh 100%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-error h-full rounded-full" style="width: 100%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">18 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">14:30 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">language_chinese_quick</span>
-                Panggung Utama
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-bold flex items-center justify-center text-label-sm">FN</div>
-<span class="font-medium">Farah Nabila</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-02', 'J-Song Acoustic Cover Competition', 'Musik &amp; Band', '16 / 16 Peserta', '18 Okt 2025, 14:30 WIB', 'Panggung Utama', 'Farah Nabila', 'Kompetisi cover lagu anime atau J-Rock format akustik 2-4 orang. Waktu tampil 12 menit termasuk cek suara ringkas.')" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-02', 'J-Song Acoustic Cover Competition', 'Musik &amp; Band', 16, '2025-10-18T14:30', 'Panggung Utama', 'Farah Nabila')" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-02', 'J-Song Acoustic Cover Competition')" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Seni &amp; Visual" data-search="lmb-03 anime fanart digital illustration kevin sanjaya ruang workshop 2">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">3</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-03</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Anime Fanart &amp; Digital Illustration</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Lomba live drawing digital bertema Maskot Takumi Matsuri</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Seni Visual
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>32 / 40</span>
-<span class="text-primary font-bold">80%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 80%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">19 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">10:00 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">meeting_room</span>
-                Ruang Workshop 2
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold flex items-center justify-center text-label-sm">KS</div>
-<span class="font-medium">Kevin Sanjaya</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-03', 'Anime Fanart &amp; Digital Illustration', 'Seni Visual', '32 / 40 Peserta', '19 Okt 2025, 10:00 WIB', 'Ruang Workshop 2', 'Kevin Sanjaya', 'Live drawing 180 menit menggunakan perangkat tablet masing-masing. Tema diberikan saat acara dimulai.')" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-03', 'Anime Fanart &amp; Digital Illustration', 'Seni Visual', 40, '2025-10-19T10:00', 'Ruang Workshop 2', 'Kevin Sanjaya')" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-03', 'Anime Fanart &amp; Digital Illustration')" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Cosplay &amp; Performance" data-search="lmb-04 anisong dance cover showcase siti rahma panggung utama">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">4</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-04</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Anisong Dance Cover Showcase</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Kompetisi dance cover grup idol atau anisong soundtrack</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Dance &amp; Perf.
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>20 / 20</span>
-<span class="text-error font-bold">Penuh 100%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-error h-full rounded-full" style="width: 100%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">19 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">15:00 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">language_chinese_quick</span>
-                Panggung Utama
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center justify-center text-label-sm">SR</div>
-<span class="font-medium">Siti Rahma</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-04', 'Anisong Dance Cover Showcase', 'Dance &amp; Performance', '20 / 20 Peserta', '19 Okt 2025, 15:00 WIB', 'Panggung Utama', 'Siti Rahma', 'Dance cover grup (3-7 orang), penilaian mencakup sinkronisasi gerakan, ekspresi, serta kostum representatif.')" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-04', 'Anisong Dance Cover Showcase', 'Cosplay &amp; Performance', 20, '2025-10-19T15:00', 'Panggung Utama', 'Siti Rahma')" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-04', 'Anisong Dance Cover Showcase')" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 5 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Kebudayaan Jepang" data-search="lmb-05 shodo kaligrafi tradisional jepang siti rahma ruang workshop 1">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">5</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-05</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Shodo (Kaligrafi Tradisional Jepang)</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Penulisan karakter Kanji menggunakan kuas dan tinta tradisional</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Kebudayaan
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>24 / 30</span>
-<span class="text-primary font-bold">80%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 80%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">19 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">13:00 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">brush</span>
-                Ruang Workshop 1
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center justify-center text-label-sm">SR</div>
-<span class="font-medium">Siti Rahma</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-05', 'Shodo (Kaligrafi Tradisional)', 'Kebudayaan', '24 / 30 Peserta', '19 Okt 2025, 13:00 WIB', 'Ruang Workshop 1', 'Siti Rahma', 'Disediakan kertas hanshi dan tinta sumi. Tiga kanji wajib ditentukan oleh juri tamu dari Konsulat Jepang.')" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-05', 'Shodo (Kaligrafi Tradisional Jepang)', 'Kebudayaan', 30, '2025-10-19T13:00', 'Ruang Workshop 1', 'Siti Rahma')" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-05', 'Shodo (Kaligrafi Tradisional Jepang)')" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 6 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Musik &amp; Band" data-search="lmb-06 karaoke sing-off anisong battle farah nabila stage outdoor mini">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">6</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-06</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Karaoke Sing-Off Anisong Battle</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Turnamen duel vokal 1 lawan 1 sistem gugur instan</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Musik &amp; Vokal
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>25 / 30</span>
-<span class="text-primary font-bold">83%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 83.3%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">20 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">11:30 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">mic</span>
-                Stage Outdoor Mini
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-bold flex items-center justify-center text-label-sm">FN</div>
-<span class="font-medium">Farah Nabila</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-06', 'Karaoke Sing-Off Anisong Battle', 'Musik &amp; Vokal', '25 / 30 Peserta', '20 Okt 2025, 11:30 WIB', 'Stage Outdoor Mini', 'Farah Nabila', 'Sistem pertarungan panggung live skor karaoke mesin JOYSOUND dan votum juri panggung.')" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-06', 'Karaoke Sing-Off Anisong Battle', 'Musik &amp; Band', 30, '2025-10-20T11:30', 'Stage Outdoor Mini', 'Farah Nabila')" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-06', 'Karaoke Sing-Off Anisong Battle')" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 7 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Cosplay &amp; Performance" data-search="lmb-07 cosplay team skit performance siti rahma main stage">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">7</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-07</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Cosplay Team Skit &amp; Performance</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Teater kabaret panggung dengan alur cerita dan efek koreografi</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Cosplay &amp; Teater
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>12 / 12 Tim</span>
-<span class="text-error font-bold">Penuh 100%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-error h-full rounded-full" style="width: 100%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">20 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">14:00 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">theater_comedy</span>
-                Main Stage
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center justify-center text-label-sm">SR</div>
-<span class="font-medium">Siti Rahma</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-07', 'Cosplay Team Skit &amp; Performance', 'Cosplay &amp; Teater', '12 / 12 Tim', '20 Okt 2025, 14:00 WIB', 'Main Stage', 'Siti Rahma', 'Durasi drama 10 menit dengan dukungan soundscape audio prerecorded dan lighting panggung utama festival.')" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-07', 'Cosplay Team Skit &amp; Performance', 'Cosplay &amp; Performance', 12, '2025-10-20T14:00', 'Main Stage', 'Siti Rahma')" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-07', 'Cosplay Team Skit &amp; Performance')" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 8 -->
-<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="Kebudayaan Jepang" data-search="lmb-08 japanese trivia pop culture quiz siti rahma ruang workshop 2">
-<td class="px-space-md py-3 text-center text-on-surface-variant font-label-sm">8</td>
-<td class="px-space-md py-3 font-mono font-medium text-primary">LMB-08</td>
-<td class="px-space-md py-3">
-<div class="font-title-sm text-title-sm text-on-surface group-hover:text-primary transition-colors">Japanese Trivia &amp; Pop Culture Quiz</div>
-<div class="text-on-surface-variant text-label-sm line-clamp-1">Kuis cepat tepat seputar sejarah, pop culture anime, &amp; kuliner Jepang</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-secondary">
-                Interaktif Edukatif
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center justify-between text-label-sm mb-1 font-medium">
-<span>10 / 15 Tim</span>
-<span class="text-primary font-bold">67%</span>
-</div>
-<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 66.6%;"></div>
-</div>
-</td>
-<td class="px-space-md py-3">
-<div class="font-medium text-on-surface">20 Okt 2025</div>
-<div class="text-on-surface-variant text-label-sm">16:30 WIB</div>
-</td>
-<td class="px-space-md py-3">
-<span class="inline-flex items-center gap-1 text-on-surface-variant text-label-md">
-<span class="material-symbols-outlined text-body-sm text-outline">quiz</span>
-                Ruang Workshop 2
-              </span>
-</td>
-<td class="px-space-md py-3">
-<div class="flex items-center gap-2">
-<div class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center justify-center text-label-sm">SR</div>
-<span class="font-medium">Siti Rahma</span>
-</div>
-</td>
-<td class="px-space-md py-3 text-right pr-space-lg">
-<div class="flex items-center justify-end gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="viewDetail('LMB-08', 'Japanese Trivia &amp; Pop Culture Quiz', 'Interaktif Edukatif', '10 / 15 Tim', '20 Okt 2025, 16:30 WIB', 'Ruang Workshop 2', 'Siti Rahma', 'Kuis cerdas cermat berkelompok 3 orang. Mencakup materi sejarah feodal hingga anime musim gugur 2025.')" type="button">
-<span class="material-symbols-outlined text-body-md">visibility</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" onclick="editLomba('LMB-08', 'Japanese Trivia &amp; Pop Culture Quiz', 'Trivia Quiz', 15, '2025-10-20T16:30', 'Ruang Workshop 2', 'Siti Rahma')" type="button">
-<span class="material-symbols-outlined text-body-md">edit</span>
-</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-error transition-colors" onclick="confirmDelete('LMB-08', 'Japanese Trivia &amp; Pop Culture Quiz')" type="button">
-<span class="material-symbols-outlined text-body-md">delete</span>
-</button>
-</div>
-</td>
-</tr>
 </tbody>
 </table>
 </div>
 <!-- Table Pagination & Row Summary Footer -->
 <div class="px-space-lg py-3.5 bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md" id="paginationNotice">
 <span>Menampilkan <strong class="text-on-surface font-semibold">1 - 8</strong> dari <strong class="text-on-surface font-semibold">8</strong> kompetisi</span>
 </div>
-<div class="flex items-center gap-1">
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container disabled:opacity-40 transition-colors" disabled="" type="button">
-<span class="material-symbols-outlined text-body-md">chevron_left</span>
-</button>
-<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center font-bold" type="button">1</button>
-<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container disabled:opacity-40 transition-colors" disabled="" type="button">
-<span class="material-symbols-outlined text-body-md">chevron_right</span>
-</button>
+<div class="flex items-center gap-1" id="paginationButtons">
 </div>
 </div>
 </div>
@@ -605,10 +182,13 @@
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="kategori_lomba">Kategori Lomba <span class="text-error">*</span></label>
 <select class="w-full h-10 px-3 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" id="kategori_lomba" required="">
-<option value="Cosplay &amp; Performance">Cosplay &amp; Performance</option>
-<option value="Musik &amp; Band">Musik &amp; Band</option>
+<option value="Cosplay & Performance">Cosplay &amp; Performance</option>
+<option value="Musik & Band">Musik &amp; Band</option>
 <option value="Seni Visual">Seni Visual</option>
-<option value="Kebudayaan">Kebudayaan</option>
+<option value="Dance & Performance">Dance &amp; Performance</option>
+<option value="Kebudayaan Jepang">Kebudayaan Jepang</option>
+<option value="Musik & Vokal">Musik &amp; Vokal</option>
+<option value="Cosplay & Teater">Cosplay &amp; Teater</option>
 <option value="Trivia Quiz">Trivia Quiz</option>
 </select>
 </div>
@@ -722,152 +302,4 @@
 </div>
 </div>
 </div>
-<script is:inline>
-  let itemToDeleteId = null;
-
-  function openModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-      modal.classList.remove('hidden');
-    }
-  }
-
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-      modal.classList.add('hidden');
-    }
-  }
-
-  function showToast(message, type = 'success') {
-    const container = document.getElementById('toast-container');
-    if (!container) return;
-    
-    const toast = document.createElement('div');
-    toast.className = `p-3 px-4 rounded-xl shadow-lg flex items-center gap-2 text-body-sm font-label-md pointer-events-auto transition-all transform duration-200 translate-y-2 opacity-0 ${
-      type === 'success' ? 'bg-inverse-surface text-inverse-on-surface' : 'bg-error text-on-error'
-    }`;
-    toast.innerHTML = `
-      <span class="material-symbols-outlined text-body-md">${type === 'success' ? 'check_circle' : 'info'}</span>
-      <span>${message}</span>
-    `;
-    
-    container.appendChild(toast);
-    setTimeout(() => {
-      toast.classList.remove('translate-y-2', 'opacity-0');
-    }, 10);
-
-    setTimeout(() => {
-      toast.classList.add('opacity-0', 'translate-y-2');
-      setTimeout(() => toast.remove(), 250);
-    }, 3200);
-  }
-
-  function printParticipantSummary() {
-    showToast('Menyiapkan berkas cetak rekap peserta lomba...', 'success');
-    setTimeout(() => {
-      window.print();
-    }, 600);
-  }
-
-  function selectCategory(categoryKey, btn) {
-    const pills = document.querySelectorAll('.category-pill');
-    pills.forEach(p => {
-      p.classList.remove('bg-primary', 'text-on-primary', 'active');
-      p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
-    });
-
-    btn.classList.add('bg-primary', 'text-on-primary', 'active');
-    btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
-
-    filterLombaTable();
-  }
-
-  function filterLombaTable() {
-    const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
-    const activePill = document.querySelector('.category-pill.active');
-    const selectedCatText = activePill ? activePill.innerText.trim() : 'Semua Kategori';
-
-    const rows = document.querySelectorAll('#lomba-tbody tr');
-
-    rows.forEach(row => {
-      const searchData = row.getAttribute('data-search') || '';
-      const rowCat = row.getAttribute('data-category') || '';
-
-      const matchSearch = searchVal === '' || searchData.includes(searchVal);
-      let matchCat = true;
-
-      if (selectedCatText !== 'Semua Kategori') {
-        if (selectedCatText.includes('Cosplay')) {
-          matchCat = rowCat.includes('Cosplay');
-        } else if (selectedCatText.includes('Musik')) {
-          matchCat = rowCat.includes('Musik');
-        } else if (selectedCatText.includes('Seni')) {
-          matchCat = rowCat.includes('Seni');
-        } else if (selectedCatText.includes('Kebudayaan')) {
-          matchCat = rowCat.includes('Kebudayaan');
-        }
-      }
-
-      if (matchSearch && matchCat) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    });
-  }
-
-  function viewDetail(id, title, cat, kuota, jadwal, lokasi, pic, desc) {
-    document.getElementById('detail-id').innerText = id;
-    document.getElementById('detail-title').innerText = title;
-    document.getElementById('detail-badge').innerText = cat;
-    document.getElementById('detail-kuota').innerText = kuota;
-    document.getElementById('detail-jadwal').innerText = jadwal;
-    document.getElementById('detail-lokasi').innerText = lokasi;
-    document.getElementById('detail-pic').innerText = pic;
-    document.getElementById('detail-desc').innerText = desc;
-    openModal('modal-detail-lomba');
-  }
-
-  function editLomba(id, nama, kategori, kuota, jadwal, lokasi, pic) {
-    document.getElementById('modal-form-title').innerText = 'Sunting Data Lomba - ' + id;
-    document.getElementById('form-lomba-id').value = id;
-    document.getElementById('nama_lomba').value = nama;
-    document.getElementById('kategori_lomba').value = kategori;
-    document.getElementById('kuota').value = kuota;
-    document.getElementById('jadwal').value = jadwal;
-    document.getElementById('lokasi').value = lokasi;
-    document.getElementById('id_panitia').value = pic;
-    document.getElementById('deskripsi').value = 'Formulir diperbarui untuk penyesuaian pendaftaran dan waktu.';
-    openModal('modal-form-lomba');
-  }
-
-  function confirmDelete(id, nama) {
-    itemToDeleteId = id;
-    document.getElementById('delete-lomba-name').innerText = nama + ' (' + id + ')';
-    openModal('modal-delete-lomba');
-  }
-
-  function executeDelete() {
-    closeModal('modal-delete-lomba');
-    showToast('Lomba ' + (itemToDeleteId || '') + ' berhasil dihapus dari sistem.', 'success');
-    itemToDeleteId = null;
-  }
-
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    const id = document.getElementById('form-lomba-id').value;
-    const nama = document.getElementById('nama_lomba').value;
-    closeModal('modal-form-lomba');
-    
-    if (id) {
-      showToast(`Perubahan data "${nama}" berhasil disimpan!`, 'success');
-    } else {
-      showToast(`Lomba baru "${nama}" berhasil didaftarkan!`, 'success');
-    }
-
-    document.getElementById('lomba-form').reset();
-    document.getElementById('form-lomba-id').value = '';
-    document.getElementById('modal-form-title').innerText = 'Tambah Cabang Lomba Baru';
-  }
-</script>
+<script src="../scripts/lomba.js"></script>
