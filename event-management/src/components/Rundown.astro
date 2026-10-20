@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full">
+<div id="rundown-print-area" class="flex flex-col w-full">
 <!-- Subtle Japanese-inspired geometric watermark background effect -->
 <div class="relative w-full overflow-hidden">
 <div class="absolute -top-24 right-4 w-96 h-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
@@ -32,7 +32,7 @@
 <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm text-tertiary">Total Kegiatan Hari 1</span>
-<span class="font-headline-md text-headline-md text-on-surface mt-0.5">8 Sesi</span>
+<span id="metric-total-sessions" class="font-headline-md text-headline-md text-on-surface mt-0.5">0 Sesi</span>
 <span class="font-body-sm text-body-sm text-secondary mt-1">09:00 - 21:00 WIB</span>
 </div>
 <div class="w-11 h-11 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
@@ -44,9 +44,9 @@
 <span class="font-label-sm text-label-sm text-tertiary">Status Saat Ini</span>
 <div class="flex items-center gap-1.5 mt-0.5">
 <span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-ping"></span>
-<span class="font-headline-md text-headline-md text-primary font-semibold">Live</span>
+<span id="metric-live-status" class="font-headline-md text-headline-md text-primary font-semibold">Menunggu</span>
 </div>
-<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[150px] mt-1">Cosplay Walk &amp; Opening</span>
+<span id="metric-live-title" class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[150px] mt-1">Belum ada sesi aktif</span>
 </div>
 <div class="w-11 h-11 rounded-lg bg-secondary-container/40 flex items-center justify-center text-primary">
 <span class="material-symbols-outlined text-headline-md">radio_button_checked</span>
@@ -55,7 +55,7 @@
 <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm text-tertiary">Distribusi Venue</span>
-<span class="font-headline-md text-headline-md text-on-surface mt-0.5">4 Titik</span>
+<span id="metric-venue-count" class="font-headline-md text-headline-md text-on-surface mt-0.5">0 Titik</span>
 <span class="font-body-sm text-body-sm text-secondary mt-1">Panggung Utama, Hall, Outdoor</span>
 </div>
 <div class="w-11 h-11 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
@@ -65,7 +65,7 @@
 <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm text-tertiary">Penanggung Jawab Siaga</span>
-<span class="font-headline-md text-headline-md text-on-surface mt-0.5">6 Panitia</span>
+<span id="metric-pic-count" class="font-headline-md text-headline-md text-on-surface mt-0.5">0 Panitia</span>
 <span class="font-body-sm text-body-sm text-primary font-medium mt-1">Komunikasi Radio Ch. 3</span>
 </div>
 <div class="w-11 h-11 rounded-lg bg-surface-container-high/60 flex items-center justify-center text-primary">
@@ -127,7 +127,7 @@
 </thead>
 <tbody class="font-body-md text-body-md divide-y divide-surface-container-low" id="rundownTableBody">
 <!-- Row 1: Selesai -->
-<tr class="hover:bg-surface-container-low/50 transition-colors opacity-80" data-id="1" data-lokasi="Panggung Utama">
+<tr class="hover:bg-surface-container-low/50 transition-colors opacity-80" data-day="hari1" data-id="1" data-lokasi="Panggung Utama">
 <td class="py-4 px-4 text-center font-label-sm text-tertiary">01</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
@@ -173,7 +173,7 @@
 </td>
 </tr>
 <!-- Row 2: Sedang Berlangsung (Highlighted) -->
-<tr class="bg-surface-container-low relative shadow-[inset_4px_0_0_0_#76b7e5]" data-id="2" data-lokasi="Panggung Utama">
+<tr class="bg-surface-container-low relative shadow-[inset_4px_0_0_0_#76b7e5]" data-day="hari1" data-id="2" data-lokasi="Panggung Utama">
 <td class="py-4 px-4 text-center font-label-sm text-primary font-bold">02</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold">
@@ -225,7 +225,7 @@
 </td>
 </tr>
 <!-- Row 3: Akan Datang -->
-<tr class="hover:bg-surface-container-low/40 transition-colors" data-id="3" data-lokasi="Hall A Indoor">
+<tr class="hover:bg-surface-container-low/40 transition-colors" data-day="hari1" data-id="3" data-lokasi="Hall A Indoor">
 <td class="py-4 px-4 text-center font-label-sm text-on-surface-variant">03</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface">
@@ -271,7 +271,7 @@
 </td>
 </tr>
 <!-- Row 4: Akan Datang -->
-<tr class="hover:bg-surface-container-low/40 transition-colors" data-id="4" data-lokasi="Ruang Workshop">
+<tr class="hover:bg-surface-container-low/40 transition-colors" data-day="hari2" data-id="4" data-lokasi="Ruang Workshop">
 <td class="py-4 px-4 text-center font-label-sm text-on-surface-variant">04</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface">
@@ -317,7 +317,7 @@
 </td>
 </tr>
 <!-- Row 5: Akan Datang -->
-<tr class="hover:bg-surface-container-low/40 transition-colors" data-id="5" data-lokasi="Panggung Utama">
+<tr class="hover:bg-surface-container-low/40 transition-colors" data-day="hari2" data-id="5" data-lokasi="Panggung Utama">
 <td class="py-4 px-4 text-center font-label-sm text-on-surface-variant">05</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface">
@@ -363,7 +363,7 @@
 </td>
 </tr>
 <!-- Row 6: Akan Datang -->
-<tr class="hover:bg-surface-container-low/40 transition-colors" data-id="6" data-lokasi="Area Outdoor Bazaar">
+<tr class="hover:bg-surface-container-low/40 transition-colors" data-day="hari2" data-id="6" data-lokasi="Area Outdoor Bazaar">
 <td class="py-4 px-4 text-center font-label-sm text-on-surface-variant">06</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface">
@@ -409,7 +409,7 @@
 </td>
 </tr>
 <!-- Row 7: Akan Datang -->
-<tr class="hover:bg-surface-container-low/40 transition-colors" data-id="7" data-lokasi="Panggung Utama">
+<tr class="hover:bg-surface-container-low/40 transition-colors" data-day="hari3" data-id="7" data-lokasi="Panggung Utama">
 <td class="py-4 px-4 text-center font-label-sm text-on-surface-variant">07</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface">
@@ -455,7 +455,7 @@
 </td>
 </tr>
 <!-- Row 8: Akan Datang -->
-<tr class="hover:bg-surface-container-low/40 transition-colors" data-id="8" data-lokasi="Hall A Indoor">
+<tr class="hover:bg-surface-container-low/40 transition-colors" data-day="hari3" data-id="8" data-lokasi="Hall A Indoor">
 <td class="py-4 px-4 text-center font-label-sm text-on-surface-variant">08</td>
 <td class="py-4 px-4">
 <div class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface">
@@ -503,22 +503,18 @@
 </tbody>
 </table>
 </div>
-<!-- Table Footer Metadata -->
-<div class="p-space-md bg-surface-container-low/50 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
-<div class="flex items-center gap-2">
-<span>Menampilkan 8 dari 8 sesi rundown (Hari 1)</span>
-<span class="inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
-<span class="text-tertiary">Terakhir disinkronkan: 10:14 WIB</span>
-</div>
-<div class="flex items-center gap-space-xs">
-<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">Sebelumnya</button>
-<span class="px-2 py-1 font-label-sm text-label-sm text-primary font-bold">1</span>
-<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">Berikutnya</button>
+<!-- Table Pagination Footer -->
+<div class="px-space-md py-space-sm bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+  <div class="font-body-sm text-body-sm text-on-surface-variant">Menampilkan <span class="font-semibold text-on-surface" id="showing-count">1-4</span> dari <span class="font-semibold text-on-surface" id="total-count">8</span> sesi rundown</div>
+  <div class="flex items-center gap-1.5" id="rundown-pagination">
+    <button id="pagination-prev" aria-label="Halaman sebelumnya" class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container disabled:opacity-40 disabled:cursor-not-allowed transition-colors" type="button"><span class="material-symbols-outlined text-body-md align-middle">chevron_left</span></button>
+    <div id="pagination-pages" class="flex items-center gap-1.5"></div>
+    <button id="pagination-next" aria-label="Halaman berikutnya" class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container disabled:opacity-40 disabled:cursor-not-allowed transition-colors" type="button"><span class="material-symbols-outlined text-body-md align-middle">chevron_right</span></button>
+  </div>
 </div>
 </div>
-</div>
-<!-- Visual Timeline & Stage Visualizer Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg mb-space-lg">
+<!-- Panel kepadatan jadwal dan alur koordinasi dihapus dari tampilan. -->
+<div class="hidden">
 <!-- Mini Stage Load Chart -->
 <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
 <div>
@@ -622,6 +618,23 @@
 </div>
 </div>
 </div>
+<style is:global>
+  @media print {
+    aside, header, #modal-root, #toast-container, #rundownModal, #deleteModal { display: none !important; }
+    .pl-64 { padding-left: 0 !important; }
+    main { padding: 0 !important; background: white !important; }
+    #rundown-print-area {
+      display: block !important;
+      width: 100%;
+      padding: 0 16px;
+      background: white;
+    }
+    #rundown-print-area button,
+    #rundown-print-area #dayTabs,
+    #rundown-print-area .relative:has(#searchQuery),
+    #rundown-print-area #rundown-pagination { display: none !important; }
+  }
+</style>
 <!-- ================= MODAL TAMBAH / EDIT KEGIATAN ================= -->
 <div class="hidden fixed inset-0 z-50 overflow-y-auto bg-inverse-surface/30 backdrop-blur-sm flex items-center justify-center p-4" id="rundownModal">
 <div class="bg-surface-container-lowest rounded-2xl w-full max-w-xl shadow-2xl overflow-hidden transition-all transform scale-100 animate-[fadeIn_0.2s_ease-out]">
@@ -736,6 +749,61 @@
 <!-- Scripts for interactivity: Filter, Modals, Search, and Toast -->
 <script is:inline>
   let pendingDeleteId = null;
+  let currentPage = 1;
+  const rowsPerPage = 4;
+  let activeDay = 'hari1';
+  let activeLocation = 'Semua Lokasi';
+  let searchQuery = '';
+
+  function getFilteredRows() {
+    return [...document.querySelectorAll('#rundownTableBody tr')].filter((row) => {
+      const dayMatches = activeDay === 'all' || row.dataset.day === activeDay;
+      const locationMatches = activeLocation === 'Semua Lokasi' || (row.dataset.lokasi || '').toLowerCase().includes(activeLocation.toLowerCase());
+      const searchMatches = !searchQuery || row.innerText.toLowerCase().includes(searchQuery);
+      return dayMatches && locationMatches && searchMatches;
+    });
+  }
+
+  function updateMetrics(rows = getFilteredRows()) {
+    const venues = new Set(rows.map((row) => row.dataset.lokasi).filter(Boolean));
+    const coordinators = new Set(rows.map((row) => row.children[4]?.innerText.trim()).filter(Boolean));
+    const liveRow = rows.find((row) => row.innerText.includes('Berlangsung'));
+    const liveTitle = liveRow?.children[2]?.innerText.trim().split('\n')[0] || 'Belum ada sesi aktif';
+    document.getElementById('metric-total-sessions').textContent = `${rows.length} Sesi`;
+    document.getElementById('metric-venue-count').textContent = `${venues.size} Titik`;
+    document.getElementById('metric-pic-count').textContent = `${coordinators.size} Panitia`;
+    document.getElementById('metric-live-status').textContent = liveRow ? 'Live' : 'Menunggu';
+    document.getElementById('metric-live-title').textContent = liveTitle;
+  }
+
+  function renderPagination() {
+    const rows = [...document.querySelectorAll('#rundownTableBody tr')];
+    const filteredRows = getFilteredRows();
+    const totalPages = Math.max(1, Math.ceil(filteredRows.length / rowsPerPage));
+    currentPage = Math.min(currentPage, totalPages);
+    const start = (currentPage - 1) * rowsPerPage;
+    const pageRows = filteredRows.slice(start, start + rowsPerPage);
+
+    rows.forEach((row) => { row.style.display = pageRows.includes(row) ? '' : 'none'; });
+    document.getElementById('total-count').textContent = filteredRows.length;
+    document.getElementById('showing-count').textContent = filteredRows.length ? `${start + 1}-${Math.min(start + rowsPerPage, filteredRows.length)}` : '0';
+
+    const pageButtons = document.getElementById('pagination-pages');
+    pageButtons.innerHTML = '';
+    for (let page = 1; page <= totalPages; page++) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = page;
+      button.className = page === currentPage
+        ? 'px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm'
+        : 'px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm transition-colors';
+      button.addEventListener('click', () => { currentPage = page; renderPagination(); });
+      pageButtons.appendChild(button);
+    }
+    document.getElementById('pagination-prev').disabled = currentPage === 1 || !filteredRows.length;
+    document.getElementById('pagination-next').disabled = currentPage === totalPages || !filteredRows.length;
+    updateMetrics(filteredRows);
+  }
 
   function showToast(message, type = 'success') {
     const toastContainer = document.getElementById('toast-container');
@@ -777,46 +845,54 @@
     const dot = document.createElement('span');
     dot.className = "w-1.5 h-1.5 rounded-full bg-primary";
     button.prepend(dot);
-
-    showToast(`Menampilkan jadwal untuk: ${button.innerText.trim()}`);
+    activeDay = dayKey;
+    currentPage = 1;
+    renderPagination();
+    showToast(`Menampilkan jadwal untuk: ${button.innerText.trim()} (${getFilteredRows().length} sesi)`);
   }
 
   function filterByLocation(selectedLocation) {
-    const rows = document.querySelectorAll('#rundownTableBody tr');
-    let visibleCount = 0;
-
-    rows.forEach(row => {
-      const rowLoc = row.getAttribute('data-lokasi') || '';
-      if (selectedLocation === 'Semua Lokasi' || rowLoc.toLowerCase().includes(selectedLocation.toLowerCase())) {
-        row.style.display = '';
-        visibleCount++;
-      } else {
-        row.style.display = 'none';
-      }
-    });
-
-    showToast(`Filter Lokasi: ${selectedLocation} (${visibleCount} sesi ditemukan)`);
+    activeLocation = selectedLocation;
+    currentPage = 1;
+    renderPagination();
+    showToast(`Filter Lokasi: ${selectedLocation} (${getFilteredRows().length} sesi ditemukan)`);
   }
 
   function handleSearch(query) {
-    const q = query.toLowerCase().trim();
-    const rows = document.querySelectorAll('#rundownTableBody tr');
-
-    rows.forEach(row => {
-      const text = row.innerText.toLowerCase();
-      if (!q || text.includes(q)) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    });
+    searchQuery = query.toLowerCase().trim();
+    currentPage = 1;
+    renderPagination();
   }
 
+  document.getElementById('pagination-prev').addEventListener('click', () => { currentPage--; renderPagination(); });
+  document.getElementById('pagination-next').addEventListener('click', () => { currentPage++; renderPagination(); });
+  renderPagination();
+
   function handleExportPdf() {
-    showToast('Menyiapkan file PDF rundown Takumi Festival...');
-    setTimeout(() => {
-      showToast('PDF Rundown siap diunduh (Rundown-Takumi-Fest-2025.pdf)');
-    }, 1200);
+    const source = document.querySelector('#rundown-print-area table');
+    const printWindow = window.open('', '_blank', 'width=1000,height=800');
+    if (!source || !printWindow) {
+      showToast('Izinkan pop-up browser untuk mencetak rundown.', 'error');
+      return;
+    }
+
+    const table = source.cloneNode(true);
+    table.querySelectorAll('button').forEach((element) => element.remove());
+    table.querySelectorAll('tr').forEach((row) => {
+      if (row.style.display === 'none') row.remove();
+    });
+    const activeDayLabel = document.querySelector('#dayTabs .bg-surface-container-lowest')?.innerText.trim() || 'Semua Hari';
+    const sessionCount = table.querySelectorAll('tbody tr').length;
+
+    printWindow.document.write(`<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Rundown-Takumi-Fest-2025</title><style>
+      * { box-sizing: border-box; } body { font-family: Arial, sans-serif; color: #0d1c2f; margin: 32px; font-size: 12px; }
+      h1 { font-size: 26px; margin: 0 0 8px; } h2, h3 { margin: 0 0 6px; } p, span { line-height: 1.45; }
+      table { width: 100%; border-collapse: collapse; margin-top: 20px; } th { background: #e6eeff; text-align: left; }
+      th, td { border: 1px solid #c0c7cf; padding: 8px; vertical-align: top; } .hidden, [hidden] { display: none !important; }
+      @page { size: A4 landscape; margin: 12mm; } @media print { body { margin: 0; } }
+    </style></head><body><h1>Rundown Kegiatan</h1><p>Takumi Festival 2025 — ${activeDayLabel}</p><p class="meta">${sessionCount} sesi kegiatan ditampilkan</p>${table.outerHTML}</body></html>`);
+    printWindow.onload = () => { printWindow.focus(); printWindow.print(); };
+    printWindow.document.close();
   }
 
   function openModal(mode = 'tambah') {
